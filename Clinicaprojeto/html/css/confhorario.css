@@ -1,0 +1,622 @@
+
+
+/* ========================================
+   CLINICMANAGER - HORÁRIOS DA CLÍNICA
+   ======================================== */
+
+:root {
+    --brown: #6F4E37;
+    --brown-dark: #4E3528;
+    --brown-light: #8B6B52;
+    --cream: #F7F3EE;
+    --cream-dark: #EDE3D8;
+    --white: #FFFFFF;
+    --text: #3E332C;
+    --muted: #8B8179;
+    --border: #EAE2D9;
+    --green: #367653;
+    --green-bg: #EAF5EE;
+    --red: #A94A43;
+    --red-bg: #FBEDEC;
+    --shadow: 0 5px 20px rgba(78, 53, 40, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* ========================================
+   CABEÇALHO
+   ======================================== */
+
+.dashboard-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    width: min(1440px, 92%);
+    min-height: 82px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: var(--brown-dark);
+    font-size: 23px;
+    font-weight: 750;
+    transition: transform 0.25s ease;
+}
+
+.brand:hover {
+    transform: translateY(-2px);
+}
+
+.brand-icon {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    background: var(--brown);
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.brand-highlight {
+    color: var(--brown-light);
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    padding: 10px 12px;
+    border-radius: 9px;
+    color: #74685F;
+    font-size: 13px;
+    font-weight: 600;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--brown);
+    background: var(--cream);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background: var(--cream-dark);
+    color: var(--brown-dark);
+}
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+   ======================================== */
+
+.schedule-container {
+    width: min(1200px, 92%);
+    margin: 38px auto 55px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: var(--brown-light);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.page-heading h1 {
+    margin: 0 0 10px;
+    color: var(--brown-dark);
+    font-size: clamp(27px, 4vw, 35px);
+}
+
+.page-heading p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.heading-icon {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    background: var(--cream-dark);
+    color: var(--brown);
+    border-radius: 18px;
+    font-size: 37px;
+}
+
+/* ========================================
+   CARTÕES DE RESUMO
+   ======================================== */
+
+.schedule-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 23px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(78, 53, 40, 0.1);
+}
+
+.summary-icon {
+    width: 49px;
+    height: 49px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    background: var(--cream);
+    color: var(--brown);
+    border-radius: 13px;
+    font-size: 25px;
+}
+
+.summary-card p {
+    margin: 0 0 7px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.summary-card h2 {
+    margin: 0 0 6px;
+    color: var(--brown-dark);
+    font-size: 21px;
+}
+
+.summary-card span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* ========================================
+   PAINEL DE FUNCIONAMENTO SEMANAL
+   ======================================== */
+
+.schedule-panel,
+.preference-card {
+    padding: 27px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.section-heading h2,
+.preference-card h2 {
+    margin: 0 0 8px;
+    color: var(--brown-dark);
+    font-size: 20px;
+}
+
+.section-heading p,
+.preference-title p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.section-tag {
+    padding: 8px 11px;
+    background: var(--cream);
+    border-radius: 8px;
+    color: var(--brown);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    white-space: nowrap;
+}
+
+.day-row {
+    display: grid;
+    grid-template-columns: minmax(145px, 1.3fr) minmax(120px, 1fr) minmax(120px, 1fr) 75px;
+    align-items: center;
+    gap: 18px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.day-name {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.day-name strong {
+    color: var(--text);
+    font-size: 13px;
+}
+
+.day-name span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.time-field,
+.preference-fields label,
+.full-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #766A60;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.time-field input,
+.preference-fields input,
+.full-field select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    color: var(--text);
+    background: #FFFEFD;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.time-field input:focus,
+.preference-fields input:focus,
+.full-field select:focus {
+    border-color: var(--brown-light);
+    box-shadow: 0 0 0 3px rgba(111, 78, 55, 0.1);
+}
+
+.day-status {
+    justify-self: end;
+    padding: 7px 10px;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 750;
+    text-align: center;
+}
+
+.day-status.open {
+    color: var(--green);
+    background: var(--green-bg);
+}
+
+.day-status.closed {
+    color: var(--red);
+    background: var(--red-bg);
+}
+
+.closed-day {
+    background: #FCFAF8;
+    border-radius: 9px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.closed-message {
+    grid-column: span 2;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ========================================
+   BOTÕES
+   ======================================== */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.button-primary,
+.button-secondary {
+    min-height: 44px;
+    padding: 12px 19px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 750;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.button-primary {
+    color: var(--white);
+    background: var(--brown);
+    border: 1px solid var(--brown);
+}
+
+.button-primary:hover {
+    background: var(--brown-dark);
+    border-color: var(--brown-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(78, 53, 40, 0.18);
+}
+
+.button-secondary {
+    color: var(--brown);
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+.button-secondary:hover {
+    background: var(--cream);
+    border-color: var(--brown-light);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   PREFERÊNCIAS
+   ======================================== */
+
+.preferences-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.preference-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 25px;
+}
+
+.preference-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    color: var(--brown);
+    background: var(--cream-dark);
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.preference-card h2 {
+    font-size: 17px;
+}
+
+.preference-title p {
+    font-size: 12px;
+}
+
+.preference-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.full-field {
+    font-size: 12px;
+}
+
+/* ========================================
+   AVISO
+   ======================================== */
+
+.information-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-top: 24px;
+    padding: 18px;
+    background: #F2EADF;
+    border: 1px solid #E6D8C7;
+    border-radius: 12px;
+}
+
+.note-icon {
+    color: var(--brown);
+    font-size: 21px;
+}
+
+.information-note strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--brown-dark);
+    font-size: 13px;
+}
+
+.information-note p {
+    margin: 0;
+    color: #746458;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   RODAPÉ
+   ======================================== */
+
+.schedule-footer {
+    padding: 24px 4%;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.schedule-footer p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+@media (max-width: 1000px) {
+    .header-container {
+        padding: 17px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .main-navigation {
+        justify-content: flex-start;
+    }
+
+    .schedule-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .day-row {
+        grid-template-columns: minmax(120px, 1fr) 1fr 1fr 70px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 650px) {
+    .schedule-container {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+    }
+
+    .heading-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 28px;
+    }
+
+    .main-navigation {
+        gap: 3px;
+    }
+
+    .nav-link {
+        padding: 9px;
+        font-size: 12px;
+    }
+
+    .schedule-panel,
+    .preference-card {
+        padding: 18px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .day-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        padding: 19px 0;
+    }
+
+    .day-name {
+        grid-column: 1 / -1;
+    }
+
+    .day-status {
+        justify-self: start;
+    }
+
+    .closed-message {
+        grid-column: 1 / -1;
+    }
+
+    .preferences-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

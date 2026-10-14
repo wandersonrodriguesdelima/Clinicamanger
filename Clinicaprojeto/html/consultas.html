@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consultas | ClinicManager</title>
+
+    <link rel="stylesheet" href="css/consultas.css">
+    
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cm-header">
+        <div class="cm-header-container">
+
+            <a href="index.html" class="cm-logo">
+                <span class="cm-logo-icon">✚</span>
+                <span>Clinic<span>Manager</span></span>
+            </a>
+
+            <nav class="cm-nav">
+                <a href="index.html">Dashboard</a>
+                <a href="paciente.html">Pacientes</a>
+                <a href="medico.html">Médicos</a>
+                <a href="consultas.html" class="active">Consultas</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="confhorario.html" >Horários</a>
+            </nav>
+
+            <div class="cm-user">
+                <div class="cm-user-avatar">AD</div>
+
+                <div class="cm-user-info">
+                    <strong>Administrador</strong>
+                    <span>Gestão da clínica</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="consultas-main">
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="consultas-hero">
+
+            <div class="consultas-hero-content">
+
+                <span class="section-eyebrow">
+                    ORGANIZAÇÃO E CUIDADO
+                </span>
+
+                <h1>Uma agenda organizada faz toda a diferença.</h1>
+
+                <p>
+                    Gerencie os agendamentos da Clínica Vida Plena,
+                    acompanhe os atendimentos e mantenha pacientes
+                    e profissionais conectados.
+                </p>
+
+                <div class="consultas-hero-actions">
+
+                    <a href="#novo-agendamento" class="btn-primary">
+                        + Agendar consulta
+                    </a>
+
+                    <a href="#agenda-consultas" class="btn-secondary">
+                        Ver agenda
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="consultas-hero-decoration">
+
+                <div class="calendar-illustration">
+
+                    <div class="calendar-top">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="calendar-title">AGENDA</div>
+
+                    <div class="calendar-grid">
+                        <span>01</span>
+                        <span>02</span>
+                        <span>03</span>
+                        <span>04</span>
+                        <span>05</span>
+                        <span>06</span>
+                        <span>07</span>
+                        <span>08</span>
+                        <span class="calendar-highlight">09</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
+                    </div>
+
+                </div>
+
+                <div class="calendar-floating-card">
+                    <span class="calendar-check">✓</span>
+
+                    <div>
+                        <strong>Agenda organizada</strong>
+                        <small>Mais praticidade no dia a dia</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INDICADORES -->
+        <section class="consultas-stats">
+
+            <article class="consulta-stat-card">
+
+                <div class="consulta-stat-top">
+                    <span>Consultas hoje</span>
+                    <span class="consulta-stat-icon">▣</span>
+                </div>
+
+                <strong>18</strong>
+                <small>Agenda demonstrativa</small>
+
+            </article>
+
+
+            <article class="consulta-stat-card">
+
+                <div class="consulta-stat-top">
+                    <span>Agendadas</span>
+                    <span class="consulta-stat-icon">◷</span>
+                </div>
+
+                <strong>08</strong>
+                <small>Exemplo de agendamentos</small>
+
+            </article>
+
+
+            <article class="consulta-stat-card">
+
+                <div class="consulta-stat-top">
+                    <span>Confirmadas</span>
+                    <span class="consulta-stat-icon">✓</span>
+                </div>
+
+                <strong>06</strong>
+                <small>Exemplo de confirmações</small>
+
+            </article>
+
+
+            <article class="consulta-stat-card">
+
+                <div class="consulta-stat-top">
+                    <span>Concluídas</span>
+                    <span class="consulta-stat-icon">♡</span>
+                </div>
+
+                <strong>04</strong>
+                <small>Exemplo de atendimentos</small>
+
+            </article>
+
+        </section>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="consultas-content-grid">
+
+            <!-- FORMULÁRIO -->
+            <article class="consulta-card consulta-form-card"
+                     id="novo-agendamento">
+
+                <div class="consulta-card-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            NOVO AGENDAMENTO
+                        </span>
+
+                        <h2>Agendar consulta</h2>
+
+                        <p>
+                            Preencha os dados para registrar um atendimento.
+                        </p>
+                    </div>
+
+                    <span class="consulta-heading-icon">＋</span>
+
+                </div>
+
+
+                <form class="consulta-form" action="#" method="post">
+
+                    <div class="consulta-form-group">
+
+                        <label for="paciente">
+                            Paciente
+                        </label>
+
+                        <select id="paciente" name="paciente" required>
+                            <option value="">Selecione um paciente</option>
+                            <option value="PAC-001">Ana Clara Souza</option>
+                            <option value="PAC-002">Roberto Martins</option>
+                            <option value="PAC-003">Juliana Lima</option>
+                            <option value="PAC-004">Marcos Silva</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="consulta-form-group">
+
+                        <label for="medico">
+                            Médico responsável
+                        </label>
+
+                        <select id="medico" name="medico" required>
+                            <option value="">Selecione um profissional</option>
+                            <option value="MED-001">
+                                Dra. Mariana Oliveira — Cardiologia
+                            </option>
+                            <option value="MED-002">
+                                Dr. Ricardo Almeida — Clínica Geral
+                            </option>
+                            <option value="MED-003">
+                                Dra. Fernanda Costa — Dermatologia
+                            </option>
+                            <option value="MED-004">
+                                Dr. Gabriel Santos — Ortopedia
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="consulta-form-row">
+
+                        <div class="consulta-form-group">
+
+                            <label for="data-consulta">
+                                Data da consulta
+                            </label>
+
+                            <input
+                                type="date"
+                                id="data-consulta"
+                                name="data_consulta"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="consulta-form-group">
+
+                            <label for="hora-consulta">
+                                Horário
+                            </label>
+
+                            <input
+                                type="time"
+                                id="hora-consulta"
+                                name="hora_consulta"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="consulta-form-group">
+
+                        <label for="tipo-consulta">
+                            Tipo de consulta
+                        </label>
+
+                        <select
+                            id="tipo-consulta"
+                            name="tipo_consulta"
+                            required
+                        >
+                            <option value="">Selecione o tipo</option>
+                            <option value="primeira">Primeira consulta</option>
+                            <option value="retorno">Retorno</option>
+                            <option value="acompanhamento">
+                                Acompanhamento
+                            </option>
+                            <option value="avaliacao">Avaliação</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="consulta-form-group">
+
+                        <label for="observacoes-consulta">
+                            Observações administrativas
+                        </label>
+
+                        <textarea
+                            id="observacoes-consulta"
+                            name="observacoes"
+                            rows="3"
+                            placeholder="Informações necessárias para organizar o atendimento..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="consulta-form-actions">
+
+                        <button type="reset" class="btn-secondary">
+                            Limpar campos
+                        </button>
+
+                        <button type="submit" class="btn-primary">
+                            Agendar consulta
+                        </button>
+
+                    </div>
+
+                    <p class="consulta-form-note">
+                        O agendamento será efetivamente registrado após
+                        a integração com o Back-End.
+                    </p>
+
+                </form>
+
+            </article>
+
+
+            <!-- PAINEL LATERAL -->
+            <aside class="consultas-sidebar">
+
+                <!-- PRÓXIMO ATENDIMENTO -->
+                <article class="consulta-card next-consultation-card">
+
+                    <div class="consulta-card-heading">
+
+                        <div>
+                            <span class="section-eyebrow">
+                                DESTAQUE DA AGENDA
+                            </span>
+
+                            <h2>Próximo atendimento</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="next-consultation-date">
+
+                        <div class="next-date-box">
+                            <span>OUT</span>
+                            <strong>13</strong>
+                        </div>
+
+                        <div class="next-date-info">
+                            <strong>Consulta de rotina</strong>
+                            <span>Exemplo de agendamento</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="next-consultation-details">
+
+                        <div class="next-detail-row">
+                            <span>◷</span>
+                            <div>
+                                <small>Horário</small>
+                                <strong>09:30</strong>
+                            </div>
+                        </div>
+
+                        <div class="next-detail-row">
+                            <span>♙</span>
+                            <div>
+                                <small>Paciente</small>
+                                <strong>Ana Clara Souza</strong>
+                            </div>
+                        </div>
+
+                        <div class="next-detail-row">
+                            <span>✚</span>
+                            <div>
+                                <small>Profissional</small>
+                                <strong>Dra. Mariana Oliveira</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <a href="#agenda-consultas" class="btn-primary next-view-button">
+                        Consultar agenda
+                    </a>
+
+                </article>
+
+
+                <!-- STATUS -->
+                <article class="consulta-card consulta-status-card">
+
+                    <div class="consulta-card-heading">
+
+                        <div>
+                            <span class="section-eyebrow">
+                                ACOMPANHAMENTO
+                            </span>
+
+                            <h2>Status dos atendimentos</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="consulta-status-row">
+
+                        <div class="status-label">
+                            <span class="status-dot dot-scheduled"></span>
+                            <span>Agendadas</span>
+                        </div>
+
+                        <strong>08</strong>
+
+                    </div>
+
+
+                    <div class="consulta-status-row">
+
+                        <div class="status-label">
+                            <span class="status-dot dot-confirmed"></span>
+                            <span>Confirmadas</span>
+                        </div>
+
+                        <strong>06</strong>
+
+                    </div>
+
+
+                    <div class="consulta-status-row">
+
+                        <div class="status-label">
+                            <span class="status-dot dot-completed"></span>
+                            <span>Concluídas</span>
+                        </div>
+
+                        <strong>04</strong>
+
+                    </div>
+
+
+                    <div class="consulta-status-row">
+
+                        <div class="status-label">
+                            <span class="status-dot dot-cancelled"></span>
+                            <span>Canceladas</span>
+                        </div>
+
+                        <strong>01</strong>
+
+                    </div>
+
+                    <p class="status-disclaimer">
+                        Indicadores ilustrativos para apresentação da interface.
+                    </p>
+
+                </article>
+
+
+                <!-- ATALHOS -->
+                <article class="consulta-card consulta-shortcuts-card">
+
+                    <div class="consulta-card-heading">
+
+                        <div>
+                            <span class="section-eyebrow">
+                                ACESSO RÁPIDO
+                            </span>
+
+                            <h2>Outras áreas</h2>
+                        </div>
+
+                    </div>
+
+
+                    <a href="paciente.html" class="consulta-shortcut">
+                        <span class="shortcut-icon">♙</span>
+
+                        <span class="shortcut-text">
+                            <strong>Pacientes</strong>
+                            <small>Consultar cadastros</small>
+                        </span>
+
+                        <span class="shortcut-arrow">→</span>
+                    </a>
+
+
+                    <a href="medico.html" class="consulta-shortcut">
+                        <span class="shortcut-icon">✚</span>
+
+                        <span class="shortcut-text">
+                            <strong>Médicos</strong>
+                            <small>Ver equipe profissional</small>
+                        </span>
+
+                        <span class="shortcut-arrow">→</span>
+                    </a>
+
+
+                    <a href="index.html" class="consulta-shortcut">
+                        <span class="shortcut-icon">⌂</span>
+
+                        <span class="shortcut-text">
+                            <strong>Dashboard</strong>
+                            <small>Voltar ao painel principal</small>
+                        </span>
+
+                        <span class="shortcut-arrow">→</span>
+                    </a>
+
+                </article>
+
+            </aside>
+
+        </section>
+
+
+        <!-- AGENDA COMPLETA -->
+        <section class="consulta-card consulta-agenda-card"
+                 id="agenda-consultas">
+
+            <div class="consulta-agenda-heading">
+
+                <div>
+                    <span class="section-eyebrow">
+                        CONTROLE DE ATENDIMENTOS
+                    </span>
+
+                    <h2>Agenda de consultas</h2>
+
+                    <p>
+                        Visualize os horários e acompanhe o andamento dos atendimentos.
+                    </p>
+                </div>
+
+                <div class="agenda-total">
+                    <strong>19</strong>
+                    <span>registros ilustrativos</span>
+                </div>
+
+            </div>
+
+
+            <!-- FILTROS VISUAIS -->
+            <div class="consulta-agenda-toolbar">
+
+                <label class="consulta-search" for="buscar-consulta">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="buscar-consulta"
+                        placeholder="Buscar por paciente ou médico..."
+                    >
+
+                </label>
+
+
+                <select
+                    class="consulta-filter"
+                    aria-label="Filtrar consultas por status"
+                >
+                    <option value="">Todos os status</option>
+                    <option value="agendada">Agendada</option>
+                    <option value="confirmada">Confirmada</option>
+                    <option value="concluida">Concluída</option>
+                    <option value="cancelada">Cancelada</option>
+                </select>
+
+
+                <select
+                    class="consulta-filter"
+                    aria-label="Filtrar consultas por período"
+                >
+                    <option value="">Todos os períodos</option>
+                    <option value="hoje">Hoje</option>
+                    <option value="semana">Esta semana</option>
+                    <option value="mes">Este mês</option>
+                </select>
+
+            </div>
+
+
+            <div class="consulta-table-wrapper">
+
+                <table class="consulta-table">
+
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Profissional</th>
+                            <th>Data</th>
+                            <th>Horário</th>
+                            <th>Tipo</th>
+                            <th>Status</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <div class="consulta-person">
+                                    <div class="consulta-avatar avatar-one">AC</div>
+
+                                    <div>
+                                        <strong>Ana Clara Souza</strong>
+                                        <span>Consulta #CON-001</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="consulta-professional">
+                                    <strong>Dra. Mariana Oliveira</strong>
+                                    <span>Cardiologia</span>
+                                </div>
+                            </td>
+
+                            <td>13/10/2026</td>
+                            <td>09:30</td>
+                            <td>Rotina</td>
+
+                            <td>
+                                <span class="consulta-badge badge-confirmed">
+                                    Confirmada
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#novo-agendamento" class="consulta-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <div class="consulta-person">
+                                    <div class="consulta-avatar avatar-two">RM</div>
+
+                                    <div>
+                                        <strong>Roberto Martins</strong>
+                                        <span>Consulta #CON-002</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="consulta-professional">
+                                    <strong>Dr. Ricardo Almeida</strong>
+                                    <span>Clínica Geral</span>
+                                </div>
+                            </td>
+
+                            <td>13/10/2026</td>
+                            <td>10:15</td>
+                            <td>Retorno</td>
+
+                            <td>
+                                <span class="consulta-badge badge-scheduled">
+                                    Agendada
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#novo-agendamento" class="consulta-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <div class="consulta-person">
+                                    <div class="consulta-avatar avatar-three">JL</div>
+
+                                    <div>
+                                        <strong>Juliana Lima</strong>
+                                        <span>Consulta #CON-003</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="consulta-professional">
+                                    <strong>Dra. Fernanda Costa</strong>
+                                    <span>Dermatologia</span>
+                                </div>
+                            </td>
+
+                            <td>13/10/2026</td>
+                            <td>11:00</td>
+                            <td>Avaliação</td>
+
+                            <td>
+                                <span class="consulta-badge badge-completed">
+                                    Concluída
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#novo-agendamento" class="consulta-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <div class="consulta-person">
+                                    <div class="consulta-avatar avatar-four">MS</div>
+
+                                    <div>
+                                        <strong>Marcos Silva</strong>
+                                        <span>Consulta #CON-004</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="consulta-professional">
+                                    <strong>Dr. Gabriel Santos</strong>
+                                    <span>Ortopedia</span>
+                                </div>
+                            </td>
+
+                            <td>14/10/2026</td>
+                            <td>14:00</td>
+                            <td>Primeira consulta</td>
+
+                            <td>
+                                <span class="consulta-badge badge-scheduled">
+                                    Agendada
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#novo-agendamento" class="consulta-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <div class="consulta-person">
+                                    <div class="consulta-avatar avatar-five">PC</div>
+
+                                    <div>
+                                        <strong>Paula Carvalho</strong>
+                                        <span>Consulta #CON-005</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="consulta-professional">
+                                    <strong>Dr. Ricardo Almeida</strong>
+                                    <span>Clínica Geral</span>
+                                </div>
+                            </td>
+
+                            <td>15/10/2026</td>
+                            <td>08:45</td>
+                            <td>Retorno</td>
+
+                            <td>
+                                <span class="consulta-badge badge-cancelled">
+                                    Cancelada
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#novo-agendamento" class="consulta-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="consulta-table-footer">
+
+                <span>
+                    Exibindo 5 consultas fictícias para demonstração.
+                </span>
+
+                <a href="#novo-agendamento" class="consulta-text-link">
+                    + Novo agendamento
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVISO DE ORGANIZAÇÃO -->
+        <section class="consulta-reminder">
+
+            <div class="reminder-icon">◇</div>
+
+            <div>
+                <h3>Um atendimento começa antes da consulta.</h3>
+
+                <p>
+                    Mantenha os horários atualizados, confira os dados
+                    dos pacientes e organize a agenda com responsabilidade.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="consultas-footer">
+
+            <div class="consultas-footer-brand">
+
+                <span class="consultas-footer-logo">✚</span>
+
+                <div>
+                    <strong>ClinicManager</strong>
+                    <span>Clínica Vida Plena</span>
+                </div>
+
+            </div>
+
+            <p>
+                Organização, tecnologia e cuidado em um só lugar.
+            </p>
+
+            <span class="consultas-copyright">
+                © 2026 ClinicManager
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>

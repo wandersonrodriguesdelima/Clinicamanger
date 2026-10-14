@@ -1,0 +1,1914 @@
+
+:root {
+    --con-brown: #6F4E37;
+    --con-brown-dark: #4E3528;
+    --con-brown-soft: #8B6B52;
+
+    --con-cream: #F7F3EE;
+    --con-cream-dark: #EDE3D8;
+    --con-white: #FFFFFF;
+
+    --con-text: #3E332C;
+    --con-muted: #8B8179;
+    --con-border: #EAE2D9;
+
+    --con-green: #52785D;
+    --con-green-bg: #E8F2E9;
+
+    --con-blue: #587FA5;
+    --con-blue-bg: #EAF1F8;
+
+    --con-amber: #A97932;
+    --con-amber-bg: #FBF0DE;
+
+    --con-red: #A45E58;
+    --con-red-bg: #F8E9E7;
+
+    --con-shadow: 0 8px 28px rgba(75, 53, 37, 0.06);
+    --con-shadow-hover: 0 16px 36px rgba(75, 53, 37, 0.12);
+
+    --con-radius: 18px;
+}
+
+
+/* =========================================
+   BASE
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    margin: 0;
+    background: var(--con-cream);
+    color: var(--con-text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(139, 107, 82, 0.45);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--con-brown);
+    color: var(--con-white);
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.cm-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--con-border);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.cm-header-container {
+    width: min(1440px, 100%);
+    min-height: 86px;
+
+    margin: 0 auto;
+    padding: 16px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cm-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    color: var(--con-brown-dark);
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+
+    transition: transform 0.3s ease;
+}
+
+.cm-logo:hover {
+    transform: translateY(-2px);
+}
+
+.cm-logo > span:last-child > span {
+    color: var(--con-brown-soft);
+}
+
+.cm-logo-icon {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+    background: var(--con-brown);
+    color: var(--con-white);
+
+    font-size: 23px;
+
+    box-shadow: 0 5px 12px rgba(111, 78, 55, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.cm-logo:hover .cm-logo-icon {
+    transform: rotate(-8deg);
+    background: var(--con-brown-dark);
+}
+
+.cm-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.cm-nav a {
+    position: relative;
+
+    padding: 10px 13px;
+    border-radius: 10px;
+
+    color: #75695F;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.cm-nav a:hover {
+    color: var(--con-brown);
+    background: var(--con-cream);
+    transform: translateY(-2px);
+}
+
+.cm-nav a.active {
+    color: var(--con-brown-dark);
+    background: var(--con-cream-dark);
+}
+
+.cm-nav a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 4px;
+
+    height: 2px;
+    border-radius: 5px;
+
+    background: var(--con-brown);
+}
+
+.cm-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.cm-user-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #E2D3C4;
+    border-radius: 50%;
+
+    background: var(--con-cream-dark);
+    color: var(--con-brown-dark);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.cm-user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+.cm-user-info strong {
+    color: var(--con-text);
+    font-size: 12px;
+}
+
+.cm-user-info span {
+    color: var(--con-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   ÁREA PRINCIPAL
+========================================= */
+
+.consultas-main {
+    width: min(1440px, 100%);
+    margin: 0 auto;
+    padding: 38px 5% 28px;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 9px;
+
+    color: var(--con-brown-soft);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+
+/* =========================================
+   BANNER PRINCIPAL
+========================================= */
+
+.consultas-hero {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 285px;
+    padding: 42px 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(196, 158, 124, 0.24),
+            transparent 32%
+        ),
+        linear-gradient(
+            120deg,
+            var(--con-brown-dark),
+            var(--con-brown) 70%,
+            #806148
+        );
+
+    box-shadow: 0 16px 40px rgba(78, 53, 40, 0.12);
+}
+
+.consultas-hero::before {
+    content: "";
+
+    position: absolute;
+    top: -155px;
+    left: 48%;
+
+    width: 250px;
+    height: 250px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.consultas-hero::after {
+    content: "";
+
+    position: absolute;
+    right: 6%;
+    bottom: -125px;
+
+    width: 180px;
+    height: 180px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+}
+
+.consultas-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.consultas-hero .section-eyebrow {
+    color: #E2C6A9;
+}
+
+.consultas-hero h1 {
+    margin: 0 0 12px;
+
+    color: var(--con-white);
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1.3px;
+}
+
+.consultas-hero p {
+    max-width: 590px;
+    margin: 0;
+
+    color: #E8DCD2;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.consultas-hero-actions {
+    margin-top: 24px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.btn-primary,
+.btn-secondary {
+    min-height: 45px;
+    padding: 12px 19px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    font-size: 12px;
+    font-weight: 750;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.btn-primary {
+    background: var(--con-brown);
+    color: var(--con-white);
+
+    box-shadow: 0 5px 13px rgba(78, 53, 40, 0.12);
+}
+
+.btn-primary:hover {
+    background: var(--con-brown-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 9px 20px rgba(78, 53, 40, 0.2);
+}
+
+.btn-secondary {
+    border-color: var(--con-border);
+    background: var(--con-white);
+    color: var(--con-brown-dark);
+}
+
+.btn-secondary:hover {
+    border-color: #D2BDA9;
+    background: var(--con-cream);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px rgba(78, 53, 40, 0.08);
+}
+
+.consultas-hero .btn-primary {
+    background: var(--con-white);
+    color: var(--con-brown-dark);
+}
+
+.consultas-hero .btn-primary:hover {
+    background: #F4EAE0;
+}
+
+.consultas-hero .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--con-white);
+}
+
+.consultas-hero .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.17);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================
+   ILUSTRAÇÃO DE CALENDÁRIO
+========================================= */
+
+.consultas-hero-decoration {
+    position: relative;
+    z-index: 2;
+
+    width: 230px;
+    min-width: 200px;
+    height: 205px;
+
+    display: grid;
+    place-items: center;
+}
+
+.calendar-illustration {
+    width: 155px;
+    padding: 0 13px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 17px;
+
+    background: var(--con-white);
+    box-shadow: 0 12px 30px rgba(42, 26, 17, 0.17);
+
+    transform: rotate(4deg);
+    transition: transform 0.35s ease;
+}
+
+.consultas-hero:hover .calendar-illustration {
+    transform: rotate(0deg) translateY(-3px);
+}
+
+.calendar-top {
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.calendar-top span {
+    width: 7px;
+    height: 17px;
+
+    border: 2px solid var(--con-brown-soft);
+    border-radius: 5px;
+
+    background: var(--con-white);
+}
+
+.calendar-title {
+    padding: 8px 0;
+
+    border-radius: 7px;
+    background: var(--con-brown);
+
+    color: var(--con-white);
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.calendar-grid {
+    margin-top: 11px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.calendar-grid span {
+    min-height: 22px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 5px;
+
+    background: #FAF7F3;
+    color: var(--con-brown-dark);
+
+    font-size: 9px;
+    font-weight: 650;
+}
+
+.calendar-grid .calendar-highlight {
+    background: var(--con-brown);
+    color: var(--con-white);
+}
+
+.calendar-floating-card {
+    position: absolute;
+    right: -5px;
+    bottom: 0;
+
+    padding: 12px 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 13px;
+
+    background: var(--con-white);
+    box-shadow: var(--con-shadow);
+}
+
+.calendar-check {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+    background: var(--con-green-bg);
+    color: var(--con-green);
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.calendar-floating-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-floating-card strong {
+    color: var(--con-text);
+    font-size: 11px;
+}
+
+.calendar-floating-card small {
+    color: var(--con-muted);
+    font-size: 10px;
+}
+
+
+/* =========================================
+   INDICADORES
+========================================= */
+
+.consultas-stats {
+    margin: 25px 0 30px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.consulta-stat-card {
+    min-width: 0;
+    padding: 22px;
+
+    border: 1px solid var(--con-border);
+    border-radius: var(--con-radius);
+
+    background: var(--con-white);
+    box-shadow: var(--con-shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.consulta-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--con-shadow-hover);
+    border-color: #D7C4B2;
+}
+
+.consulta-stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.consulta-stat-top > span:first-child {
+    color: var(--con-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.consulta-stat-icon {
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 11px;
+    background: var(--con-cream);
+    color: var(--con-brown);
+
+    font-size: 20px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.consulta-stat-card:hover .consulta-stat-icon {
+    transform: scale(1.08) rotate(-4deg);
+    background: var(--con-cream-dark);
+}
+
+.consulta-stat-card > strong {
+    display: block;
+    margin: 13px 0 2px;
+
+    color: var(--con-brown-dark);
+    font-size: 31px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.consulta-stat-card > small {
+    color: var(--con-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   GRID PRINCIPAL
+========================================= */
+
+.consultas-content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(270px, 0.85fr);
+    align-items: start;
+    gap: 23px;
+}
+
+.consulta-card {
+    min-width: 0;
+
+    border: 1px solid var(--con-border);
+    border-radius: var(--con-radius);
+
+    background: var(--con-white);
+    box-shadow: var(--con-shadow);
+}
+
+.consulta-form-card {
+    padding: 28px;
+}
+
+.consulta-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 24px;
+}
+
+.consulta-card-heading h2,
+.consulta-agenda-heading h2 {
+    margin: 0;
+
+    color: var(--con-brown-dark);
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+}
+
+.consulta-card-heading p,
+.consulta-agenda-heading p {
+    margin: 7px 0 0;
+
+    color: var(--con-muted);
+    font-size: 12px;
+}
+
+.consulta-heading-icon {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 13px;
+    background: var(--con-cream);
+    color: var(--con-brown);
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+.consulta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.consulta-form-group {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.consulta-form-group label {
+    color: var(--con-text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.consulta-form-group input,
+.consulta-form-group select,
+.consulta-form-group textarea {
+    width: 100%;
+    min-height: 47px;
+    padding: 12px 13px;
+
+    border: 1px solid #E4DCD4;
+    border-radius: 10px;
+
+    background: #FFFEFD;
+    color: var(--con-text);
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.consulta-form-group textarea {
+    min-height: 95px;
+    resize: vertical;
+}
+
+.consulta-form-group input::placeholder,
+.consulta-form-group textarea::placeholder {
+    color: #B0A59B;
+}
+
+.consulta-form-group input:hover,
+.consulta-form-group select:hover,
+.consulta-form-group textarea:hover {
+    border-color: #CDB8A4;
+}
+
+.consulta-form-group input:focus,
+.consulta-form-group select:focus,
+.consulta-form-group textarea:focus {
+    outline: none;
+
+    border-color: var(--con-brown-soft);
+    background: var(--con-white);
+
+    box-shadow: 0 0 0 4px rgba(139, 107, 82, 0.11);
+}
+
+.consulta-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.consulta-form-actions {
+    margin-top: 5px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+}
+
+.consulta-form-actions button {
+    flex: 1;
+}
+
+.consulta-form-note {
+    margin: 0;
+
+    color: var(--con-muted);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BARRA LATERAL
+========================================= */
+
+.consultas-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.next-consultation-card,
+.consulta-status-card,
+.consulta-shortcuts-card {
+    padding: 24px;
+}
+
+.consultas-sidebar .consulta-card-heading {
+    margin-bottom: 17px;
+}
+
+.consultas-sidebar .consulta-card-heading h2 {
+    font-size: 19px;
+}
+
+
+/* =========================================
+   PRÓXIMO ATENDIMENTO
+========================================= */
+
+.next-consultation-date {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 14px;
+
+    border: 1px solid #EDE2D7;
+    border-radius: 13px;
+
+    background: #FCF8F3;
+}
+
+.next-date-box {
+    width: 54px;
+    min-width: 54px;
+    height: 63px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+    background: var(--con-brown);
+    color: var(--con-white);
+}
+
+.next-date-box span {
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1px;
+}
+
+.next-date-box strong {
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.next-date-info {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.next-date-info strong {
+    color: var(--con-brown-dark);
+    font-size: 12px;
+}
+
+.next-date-info span {
+    color: var(--con-muted);
+    font-size: 10px;
+}
+
+.next-consultation-details {
+    margin: 19px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.next-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.next-detail-row > span {
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: var(--con-cream);
+    color: var(--con-brown);
+
+    font-size: 18px;
+}
+
+.next-detail-row div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.next-detail-row small {
+    color: var(--con-muted);
+    font-size: 10px;
+}
+
+.next-detail-row strong {
+    color: var(--con-brown-dark);
+    font-size: 11px;
+}
+
+.next-view-button {
+    width: 100%;
+}
+
+
+/* =========================================
+   STATUS DAS CONSULTAS
+========================================= */
+
+.consulta-status-row {
+    padding: 13px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    border-bottom: 1px solid #F0EAE4;
+}
+
+.consulta-status-row:last-of-type {
+    border-bottom: none;
+}
+
+.status-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #75695F;
+    font-size: 11px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.dot-scheduled {
+    background: var(--con-amber);
+}
+
+.dot-confirmed {
+    background: var(--con-blue);
+}
+
+.dot-completed {
+    background: var(--con-green);
+}
+
+.dot-cancelled {
+    background: var(--con-red);
+}
+
+.consulta-status-row > strong {
+    color: var(--con-brown-dark);
+    font-size: 13px;
+}
+
+.status-disclaimer {
+    margin: 14px 0 0;
+
+    color: var(--con-muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ATALHOS
+========================================= */
+
+.consulta-shortcuts-card {
+    background: linear-gradient(145deg, #FFFFFF, #FBF7F2);
+}
+
+.consulta-shortcut {
+    padding: 13px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    border-bottom: 1px solid #F0EAE4;
+
+    transition:
+        padding 0.25s ease,
+        background 0.25s ease;
+}
+
+.consulta-shortcut:last-child {
+    border-bottom: none;
+}
+
+.consulta-shortcut:hover {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.shortcut-icon {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 11px;
+    background: var(--con-cream);
+    color: var(--con-brown);
+
+    font-size: 20px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.consulta-shortcut:hover .shortcut-icon {
+    background: var(--con-cream-dark);
+    transform: translateY(-2px);
+}
+
+.shortcut-text {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.shortcut-text strong {
+    color: var(--con-brown-dark);
+    font-size: 12px;
+}
+
+.shortcut-text small {
+    color: var(--con-muted);
+    font-size: 10px;
+}
+
+.shortcut-arrow {
+    color: var(--con-brown-soft);
+    font-size: 18px;
+
+    transition: transform 0.25s ease;
+}
+
+.consulta-shortcut:hover .shortcut-arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   AGENDA COMPLETA
+========================================= */
+
+.consulta-agenda-card {
+    margin-top: 27px;
+    padding: 28px;
+
+    scroll-margin-top: 110px;
+}
+
+.consulta-agenda-heading {
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.agenda-total {
+    padding: 11px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    border: 1px solid var(--con-border);
+    border-radius: 12px;
+
+    background: var(--con-cream);
+    white-space: nowrap;
+}
+
+.agenda-total strong {
+    color: var(--con-brown-dark);
+    font-size: 20px;
+}
+
+.agenda-total span {
+    color: var(--con-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   BUSCA E FILTROS
+========================================= */
+
+.consulta-agenda-toolbar {
+    margin-bottom: 21px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.consulta-search {
+    min-width: 180px;
+    flex: 1;
+
+    min-height: 46px;
+    padding: 0 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid var(--con-border);
+    border-radius: 10px;
+
+    background: #FFFEFD;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.consulta-search:focus-within {
+    border-color: var(--con-brown-soft);
+    box-shadow: 0 0 0 4px rgba(139, 107, 82, 0.1);
+}
+
+.consulta-search > span {
+    color: var(--con-brown-soft);
+    font-size: 25px;
+    line-height: 1;
+}
+
+.consulta-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: var(--con-text);
+
+    font-size: 12px;
+}
+
+.consulta-search input::placeholder {
+    color: #A99D93;
+}
+
+.consulta-filter {
+    width: 170px;
+    max-width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+
+    border: 1px solid var(--con-border);
+    border-radius: 10px;
+
+    background: var(--con-white);
+    color: var(--con-text);
+
+    font-size: 11px;
+    cursor: pointer;
+
+    transition: border-color 0.25s ease;
+}
+
+.consulta-filter:hover {
+    border-color: #CDB8A4;
+}
+
+.consulta-filter:focus {
+    outline: none;
+    border-color: var(--con-brown-soft);
+}
+
+
+/* =========================================
+   TABELA DE CONSULTAS
+========================================= */
+
+.consulta-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid #F0EAE4;
+    border-radius: 13px;
+}
+
+.consulta-table {
+    width: 100%;
+    min-width: 930px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    text-align: left;
+}
+
+.consulta-table thead {
+    background: #FAF7F3;
+}
+
+.consulta-table th {
+    padding: 15px 13px;
+
+    border-bottom: 1px solid var(--con-border);
+
+    color: var(--con-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.consulta-table td {
+    padding: 16px 13px;
+
+    border-bottom: 1px solid #F1ECE7;
+
+    color: #766A61;
+    font-size: 11px;
+    white-space: nowrap;
+
+    transition: background 0.2s ease;
+}
+
+.consulta-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.consulta-table tbody tr:hover td {
+    background: #FCF9F5;
+}
+
+.consulta-person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.consulta-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.avatar-one {
+    background: #E8D6C4;
+    color: #6F4E37;
+}
+
+.avatar-two {
+    background: #DCE8DF;
+    color: #45694F;
+}
+
+.avatar-three {
+    background: #E9DFEF;
+    color: #765C8A;
+}
+
+.avatar-four {
+    background: #F3E2C6;
+    color: #956B30;
+}
+
+.avatar-five {
+    background: #DDE8F0;
+    color: #4B6D8D;
+}
+
+.consulta-person > div:last-child,
+.consulta-professional {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.consulta-person strong,
+.consulta-professional strong {
+    color: var(--con-brown-dark);
+    font-size: 11px;
+}
+
+.consulta-person span,
+.consulta-professional span {
+    color: var(--con-muted);
+    font-size: 10px;
+}
+
+.consulta-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 750;
+}
+
+.badge-scheduled {
+    background: var(--con-amber-bg);
+    color: var(--con-amber);
+}
+
+.badge-confirmed {
+    background: var(--con-blue-bg);
+    color: var(--con-blue);
+}
+
+.badge-completed {
+    background: var(--con-green-bg);
+    color: var(--con-green);
+}
+
+.badge-cancelled {
+    background: var(--con-red-bg);
+    color: var(--con-red);
+}
+
+.consulta-table-link {
+    color: var(--con-brown);
+    font-size: 11px;
+    font-weight: 750;
+
+    transition: color 0.2s ease;
+}
+
+.consulta-table-link:hover {
+    color: var(--con-brown-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+/* =========================================
+   RODAPÉ DA TABELA
+========================================= */
+
+.consulta-table-footer {
+    margin-top: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.consulta-table-footer > span {
+    color: var(--con-muted);
+    font-size: 11px;
+}
+
+.consulta-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--con-brown);
+    font-size: 12px;
+    font-weight: 750;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+.consulta-text-link:hover {
+    gap: 12px;
+    color: var(--con-brown-dark);
+}
+
+
+/* =========================================
+   AVISO
+========================================= */
+
+.consulta-reminder {
+    margin-top: 25px;
+    padding: 21px 23px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    border: 1px solid #E9DDD0;
+    border-radius: var(--con-radius);
+
+    background: linear-gradient(110deg, #FBF7F1, #FFFFFF);
+    box-shadow: var(--con-shadow);
+}
+
+.reminder-icon {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 11px;
+    background: var(--con-cream-dark);
+    color: var(--con-brown);
+
+    font-size: 22px;
+}
+
+.consulta-reminder h3 {
+    margin: 0 0 5px;
+
+    color: var(--con-brown-dark);
+    font-size: 13px;
+}
+
+.consulta-reminder p {
+    margin: 0;
+
+    color: var(--con-muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.consultas-footer {
+    margin-top: 35px;
+    padding: 24px 0 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    border-top: 1px solid #E5DBD1;
+}
+
+.consultas-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.consultas-footer-logo {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+    background: var(--con-brown);
+    color: var(--con-white);
+
+    font-size: 22px;
+}
+
+.consultas-footer-brand > div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.consultas-footer-brand strong {
+    color: var(--con-brown-dark);
+    font-size: 12px;
+}
+
+.consultas-footer-brand div span {
+    color: var(--con-muted);
+    font-size: 10px;
+}
+
+.consultas-footer > p {
+    margin: 0;
+
+    color: var(--con-muted);
+    font-size: 11px;
+}
+
+.consultas-copyright {
+    color: var(--con-muted);
+    font-size: 10px;
+}
+
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+    .consultas-hero-content,
+    .consulta-stat-card,
+    .consulta-card {
+        animation: consulta-fade-in 0.55s ease both;
+    }
+
+    .consulta-stat-card:nth-child(2) {
+        animation-delay: 0.06s;
+    }
+
+    .consulta-stat-card:nth-child(3) {
+        animation-delay: 0.12s;
+    }
+
+    .consulta-stat-card:nth-child(4) {
+        animation-delay: 0.18s;
+    }
+
+    @keyframes consulta-fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(9px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 1150px) {
+    .cm-header-container {
+        flex-wrap: wrap;
+        gap: 15px 20px;
+    }
+
+    .cm-nav {
+        order: 3;
+        width: 100%;
+
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .cm-user {
+        margin-left: auto;
+    }
+
+    .consultas-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .consultas-content-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.8fr);
+    }
+
+    .consultas-hero {
+        padding: 36px;
+    }
+
+    .consultas-hero-decoration {
+        transform: scale(0.85);
+        transform-origin: center right;
+        margin-left: -20px;
+    }
+
+    .consulta-agenda-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .consulta-search {
+        flex-basis: 100%;
+    }
+
+    .consulta-filter {
+        flex: 1;
+    }
+}
+
+
+/* =========================================
+   TABLETS PEQUENOS
+========================================= */
+
+@media (max-width: 850px) {
+    .consultas-main {
+        padding-top: 25px;
+    }
+
+    .consultas-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .consultas-hero-decoration {
+        display: none;
+    }
+
+    .consultas-hero-content {
+        max-width: 100%;
+    }
+
+    .consultas-hero {
+        min-height: auto;
+    }
+
+    .consultas-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    .next-consultation-card {
+        grid-row: span 2;
+    }
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+    .cm-header-container {
+        padding: 13px 5%;
+        gap: 12px;
+    }
+
+    .cm-logo {
+        font-size: 19px;
+    }
+
+    .cm-user-info {
+        display: none;
+    }
+
+    .cm-user-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    .cm-nav {
+        gap: 4px;
+    }
+
+    .cm-nav a {
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    .cm-nav a.active::after {
+        left: 9px;
+        right: 9px;
+        bottom: 2px;
+    }
+
+    .consultas-main {
+        padding: 22px 5% 20px;
+    }
+
+    .consultas-hero {
+        padding: 27px 22px;
+        border-radius: 19px;
+    }
+
+    .consultas-hero h1 {
+        font-size: 30px;
+    }
+
+    .consultas-hero p {
+        font-size: 12px;
+    }
+
+    .consultas-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .consultas-hero-actions a {
+        width: 100%;
+    }
+
+    .consultas-stats {
+        gap: 11px;
+        margin: 18px 0 22px;
+    }
+
+    .consulta-stat-card {
+        padding: 16px 13px;
+        border-radius: 14px;
+    }
+
+    .consulta-stat-top > span:first-child {
+        font-size: 10px;
+    }
+
+    .consulta-stat-icon {
+        width: 31px;
+        height: 31px;
+        font-size: 17px;
+    }
+
+    .consulta-stat-card > strong {
+        margin-top: 11px;
+        font-size: 27px;
+    }
+
+    .consulta-stat-card > small {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .consulta-form-card,
+    .consulta-agenda-card {
+        padding: 20px 16px;
+    }
+
+    .consulta-card-heading h2,
+    .consulta-agenda-heading h2 {
+        font-size: 20px;
+    }
+
+    .consulta-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .consulta-form-actions {
+        flex-direction: column;
+    }
+
+    .consulta-form-actions button {
+        width: 100%;
+        flex: auto;
+    }
+
+    .consultas-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .next-consultation-card {
+        grid-row: auto;
+    }
+
+    .consulta-agenda-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .agenda-total {
+        padding: 9px 12px;
+    }
+
+    .consulta-agenda-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .consulta-search {
+        flex: auto;
+        min-width: 0;
+    }
+
+    .consulta-filter {
+        width: 100%;
+        flex: auto;
+    }
+
+    .consulta-table-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .consulta-reminder {
+        padding: 18px 15px;
+    }
+
+    .consultas-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .consultas-footer > p {
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

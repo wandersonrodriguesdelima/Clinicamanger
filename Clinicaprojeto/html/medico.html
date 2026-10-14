@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Médicos | ClinicManager</title>
+
+    <!-- CSS compartilhado do projeto -->
+    <link rel="stylesheet" href="css/medico.css">
+
+    
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cm-header">
+        <div class="cm-header-container">
+
+            <a href="index.html" class="cm-logo">
+                <span class="cm-logo-icon">✚</span>
+                <span>Clinic<span>Manager</span></span>
+            </a>
+
+            <nav class="cm-nav">
+                <a href="index.html">Dashboard</a>
+                <a href="paciente.html">Pacientes</a>
+                <a href="medico.html" class="active">Médicos</a>
+                <a href="consultas.html">Consultas</a>
+                <a href="sobre.html">Sobre</a>
+                 <a href="confhorario.html" >Horários</a>
+            </nav>
+
+            <div class="cm-user">
+                <div class="cm-user-avatar">AD</div>
+
+                <div class="cm-user-info">
+                    <strong>Administrador</strong>
+                    <span>Gestão da clínica</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="medico-main">
+
+        <!-- APRESENTAÇÃO -->
+        <section class="medico-hero">
+
+            <div class="medico-hero-content">
+                <span class="section-eyebrow">GESTÃO DE PROFISSIONAIS</span>
+
+                <h1>Equipe médica</h1>
+
+                <p>
+                    Organize as informações dos profissionais, acompanhe
+                    as especialidades e mantenha a equipe da Clínica
+                    Vida Plena sempre bem organizada.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#cadastro-medico" class="btn-primary">
+                        + Cadastrar médico
+                    </a>
+
+                    <a href="#lista-medicos" class="btn-secondary">
+                        Ver profissionais
+                    </a>
+                </div>
+            </div>
+
+            <div class="medico-hero-decoration">
+                <div class="hero-decoration-circle">
+                    <span>✚</span>
+                </div>
+
+                <div class="hero-floating-card">
+                    <span class="floating-icon">✓</span>
+                    <div>
+                        <strong>Equipe médica</strong>
+                        <small>Organização e cuidado</small>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- INDICADORES -->
+        <section class="medico-stats">
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <span class="stat-label">Total de médicos</span>
+                    <span class="stat-icon">♙</span>
+                </div>
+
+                <strong class="stat-number">12</strong>
+                <span class="stat-description">
+                    Profissionais cadastrados
+                </span>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <span class="stat-label">Especialidades</span>
+                    <span class="stat-icon">✚</span>
+                </div>
+
+                <strong class="stat-number">08</strong>
+                <span class="stat-description">
+                    Áreas de atendimento
+                </span>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <span class="stat-label">Disponibilidade</span>
+                    <span class="stat-icon">◷</span>
+                </div>
+
+                <strong class="stat-number">10</strong>
+                <span class="stat-description">
+                    Médicos disponíveis
+                </span>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <span class="stat-label">Atendimentos hoje</span>
+                    <span class="stat-icon">▣</span>
+                </div>
+
+                <strong class="stat-number">18</strong>
+                <span class="stat-description">
+                    Consultas programadas
+                </span>
+            </article>
+
+        </section>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="medico-content-grid">
+
+            <!-- CADASTRO -->
+            <article class="content-card cadastro-card" id="cadastro-medico">
+
+                <div class="card-heading">
+                    <div>
+                        <span class="section-eyebrow">NOVO PROFISSIONAL</span>
+                        <h2>Cadastrar médico</h2>
+                        <p>Preencha os dados do profissional.</p>
+                    </div>
+
+                    <span class="heading-icon">＋</span>
+                </div>
+
+                <form class="medico-form" action="#" method="post">
+
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Ex.: Dra. Ana Costa"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="crm">CRM</label>
+                            <input
+                                type="text"
+                                id="crm"
+                                name="crm"
+                                placeholder="Número do CRM"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="especialidade">Especialidade</label>
+
+                            <select
+                                id="especialidade"
+                                name="especialidade"
+                                required
+                            >
+                                <option value="">Selecione</option>
+                                <option>Clínica geral</option>
+                                <option>Cardiologia</option>
+                                <option>Dermatologia</option>
+                                <option>Ginecologia</option>
+                                <option>Pediatria</option>
+                                <option>Ortopedia</option>
+                                <option>Neurologia</option>
+                                <option>Oftalmologia</option>
+                                <option>Outra</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail profissional</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="medico@clinicavida.com.br"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(11) 99999-9999"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horario">Período de atendimento</label>
+
+                        <select id="horario" name="horario" required>
+                            <option value="">Selecione o período</option>
+                            <option>Manhã</option>
+                            <option>Tarde</option>
+                            <option>Noite</option>
+                            <option>Integral</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn-secondary">
+                            Limpar campos
+                        </button>
+
+                        <button type="submit" class="btn-primary">
+                            Cadastrar profissional
+                        </button>
+                    </div>
+
+                    <p class="form-note">
+                        O cadastro definitivo dependerá da integração
+                        com o sistema de Back-End.
+                    </p>
+
+                </form>
+
+            </article>
+
+
+            <!-- INFORMAÇÕES LATERAIS -->
+            <aside class="medico-sidebar">
+
+                <article class="content-card team-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <span class="section-eyebrow">NOSSA EQUIPE</span>
+                            <h2>Equipe médica</h2>
+                        </div>
+                    </div>
+
+                    <p class="sidebar-description">
+                        Profissionais dedicados à qualidade e ao cuidado
+                        de cada paciente.
+                    </p>
+
+                    <div class="team-visual">
+
+                        <div class="team-avatar avatar-one">AC</div>
+                        <div class="team-avatar avatar-two">RM</div>
+                        <div class="team-avatar avatar-three">JL</div>
+                        <div class="team-avatar avatar-four">MS</div>
+                        <div class="team-avatar avatar-more">+8</div>
+
+                    </div>
+
+                    <div class="team-summary">
+                        <strong>12 profissionais</strong>
+                        <span>Equipe multidisciplinar</span>
+                    </div>
+
+                    <div class="team-divider"></div>
+
+                    <div class="specialty-summary">
+                        <div class="specialty-icon">✚</div>
+
+                        <div>
+                            <strong>Diversas especialidades</strong>
+                            <p>Atendimento integrado e organizado.</p>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="content-card attention-card">
+
+                    <div class="attention-icon">i</div>
+
+                    <h3>Organização profissional</h3>
+
+                    <p>
+                        Mantenha os dados dos médicos atualizados para
+                        facilitar a organização dos horários e das
+                        consultas da clínica.
+                    </p>
+
+                    <a href="consultas.html" class="text-link">
+                        Acessar consultas <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <article class="content-card privacy-card">
+
+                    <div class="privacy-icon">◇</div>
+
+                    <div>
+                        <h3>Privacidade dos dados</h3>
+
+                        <p>
+                            Informações profissionais devem ser acessadas
+                            somente por pessoas autorizadas.
+                        </p>
+                    </div>
+
+                </article>
+
+            </aside>
+
+        </section>
+
+
+        <!-- LISTA DE MÉDICOS -->
+        <section class="content-card doctors-list-card" id="lista-medicos">
+
+            <div class="list-heading">
+
+                <div>
+                    <span class="section-eyebrow">CADASTRO DA CLÍNICA</span>
+                    <h2>Médicos cadastrados</h2>
+                    <p>Visualize os profissionais registrados no sistema.</p>
+                </div>
+
+                <div class="list-counter">
+                    <strong>12</strong>
+                    <span>profissionais</span>
+                </div>
+
+            </div>
+
+
+            <div class="list-toolbar">
+
+                <label class="search-box" for="busca-medico">
+                    <span>⌕</span>
+                    <input
+                        type="search"
+                        id="busca-medico"
+                        placeholder="Buscar por nome ou especialidade..."
+                    >
+                </label>
+
+                <select class="filter-select" aria-label="Filtrar por especialidade">
+                    <option value="">Todas as especialidades</option>
+                    <option>Clínica geral</option>
+                    <option>Cardiologia</option>
+                    <option>Dermatologia</option>
+                    <option>Pediatria</option>
+                    <option>Ortopedia</option>
+                </select>
+
+            </div>
+
+
+            <div class="table-wrapper">
+                <table class="doctors-table">
+
+                    <thead>
+                        <tr>
+                            <th>Profissional</th>
+                            <th>Especialidade</th>
+                            <th>CRM</th>
+                            <th>Período</th>
+                            <th>Status</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <div class="doctor-person">
+                                    <div class="doctor-avatar avatar-one">AC</div>
+
+                                    <div>
+                                        <strong>Dra. Ana Costa</strong>
+                                        <span>ana@clinicavida.com.br</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>Cardiologia</td>
+                            <td>CRM 123456</td>
+                            <td>Manhã</td>
+
+                            <td>
+                                <span class="status-pill status-active">
+                                    Disponível
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#cadastro-medico" class="table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="doctor-person">
+                                    <div class="doctor-avatar avatar-two">RM</div>
+
+                                    <div>
+                                        <strong>Dr. Rafael Martins</strong>
+                                        <span>rafael@clinicavida.com.br</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>Clínica geral</td>
+                            <td>CRM 234567</td>
+                            <td>Tarde</td>
+
+                            <td>
+                                <span class="status-pill status-active">
+                                    Disponível
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#cadastro-medico" class="table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="doctor-person">
+                                    <div class="doctor-avatar avatar-three">JL</div>
+
+                                    <div>
+                                        <strong>Dra. Juliana Lima</strong>
+                                        <span>juliana@clinicavida.com.br</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>Dermatologia</td>
+                            <td>CRM 345678</td>
+                            <td>Integral</td>
+
+                            <td>
+                                <span class="status-pill status-active">
+                                    Disponível
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#cadastro-medico" class="table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="doctor-person">
+                                    <div class="doctor-avatar avatar-four">MS</div>
+
+                                    <div>
+                                        <strong>Dr. Marcelo Souza</strong>
+                                        <span>marcelo@clinicavida.com.br</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>Pediatria</td>
+                            <td>CRM 456789</td>
+                            <td>Manhã</td>
+
+                            <td>
+                                <span class="status-pill status-away">
+                                    Em atendimento
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#cadastro-medico" class="table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+
+            <div class="table-footer">
+                <span>Exibindo 4 profissionais de demonstração</span>
+
+                <a href="#cadastro-medico" class="text-link">
+                    Novo cadastro <span>→</span>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="medico-footer">
+
+            <div class="footer-brand">
+                <span class="footer-logo">✚</span>
+
+                <div>
+                    <strong>ClinicManager</strong>
+                    <span>Clínica Vida Plena</span>
+                </div>
+            </div>
+
+            <p>
+                Organização, tecnologia e cuidado em um só lugar.
+            </p>
+
+            <span class="footer-copyright">
+                © 2026 ClinicManager
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>

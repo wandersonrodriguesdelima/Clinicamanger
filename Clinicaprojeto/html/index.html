@@ -1,0 +1,571 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClinicManager — sistema de gestão da Clínica Vida Plena.">
+
+    <title>ClinicManager | Painel Administrativo</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="dashboard-header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand" aria-label="ClinicManager - Início">
+                <span class="brand-icon">✚</span>
+                <span class="brand-text">Clinic<span>Manager</span></span>
+            </a>
+
+            <nav class="main-navigation" aria-label="Navegação principal">
+                <a href="index.html" class="nav-link active" aria-current="page">Dashboard</a>
+                <a href="paciente.html" class="nav-link">Pacientes</a>
+                <a href="medico.html" class="nav-link">Médicos</a>
+                <a href="consultas.html" class="nav-link">Consultas</a>
+                <a href="sobre.html" class="nav-link">Sobre </a>
+                 <a href="confhorario.html" >Horários</a>
+            </nav>
+
+            <div class="header-profile">
+                <div class="profile-avatar" aria-hidden="true">AD</div>
+                <div class="profile-information">
+                    <span class="profile-name">Administrador</span>
+                    <span class="profile-role">Gestão da clínica</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="dashboard-main">
+
+        <!-- BOAS-VINDAS -->
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+                <span class="section-eyebrow">PAINEL ADMINISTRATIVO</span>
+
+                <h1>Bem-vindo ao ClinicManager</h1>
+
+                <p>
+                    Organize a rotina da clínica, acompanhe as atividades
+                    e gerencie as informações administrativas em um só lugar.
+                </p>
+
+                <div class="welcome-actions">
+                    <a href="consultas.html" class="button button-primary">
+                        + Nova consulta
+                    </a>
+
+                    <a href="pacientes.html" class="button button-secondary">
+                        Ver pacientes
+                    </a>
+                </div>
+            </div>
+
+            <div class="welcome-decoration" aria-hidden="true">
+                <div class="decoration-circle">
+                    <span>✚</span>
+                </div>
+
+                <div class="decoration-caption">
+                    <strong>Clínica Vida Plena</strong>
+                    <span>Cuidado, organização e confiança</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- INDICADORES -->
+        <section class="statistics-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-eyebrow">VISÃO GERAL</span>
+                    <h2>Resumo da clínica</h2>
+                    <p>Indicadores demonstrativos da rotina administrativa.</p>
+                </div>
+            </div>
+
+            <div class="statistics-grid">
+
+                <article class="stat-card">
+                    <div class="stat-card-top">
+                        <span class="stat-label">Pacientes cadastrados</span>
+                        <span class="stat-icon" aria-hidden="true">♙</span>
+                    </div>
+                    <p class="stat-number">128</p>
+                    <span class="stat-description">Cadastros demonstrativos</span>
+                    <a href="pacientes.html" class="stat-link">Gerenciar pacientes →</a>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-card-top">
+                        <span class="stat-label">Profissionais</span>
+                        <span class="stat-icon" aria-hidden="true">⚕</span>
+                    </div>
+                    <p class="stat-number">12</p>
+                    <span class="stat-description">Profissionais demonstrativos</span>
+                    <a href="medicos.html" class="stat-link">Ver profissionais →</a>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-card-top">
+                        <span class="stat-label">Consultas do dia</span>
+                        <span class="stat-icon" aria-hidden="true">▦</span>
+                    </div>
+                    <p class="stat-number">18</p>
+                    <span class="stat-description">Agenda demonstrativa</span>
+                    <a href="consultas.html" class="stat-link">Acessar agenda →</a>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-card-top">
+                        <span class="stat-label">Pendências</span>
+                        <span class="stat-icon" aria-hidden="true">◷</span>
+                    </div>
+                    <p class="stat-number">05</p>
+                    <span class="stat-description">Itens para revisão</span>
+                    <a href="#tarefas" class="stat-link">Conferir tarefas →</a>
+                </article>
+
+            </div>
+
+            <p class="data-disclaimer">
+                Os números são fictícios e servem para demonstrar a interface.
+                Os dados reais deverão vir do Back-End.
+            </p>
+
+        </section>
+
+
+        <!-- CONSULTAS E ACESSO RÁPIDO -->
+        <section class="content-grid">
+
+            <article class="dashboard-panel appointments-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-eyebrow">AGENDA</span>
+                        <h2>Próximas consultas</h2>
+                    </div>
+                    <a href="consultas.html" class="panel-link">Ver agenda →</a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="appointments-table">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Paciente</th>
+                                <th scope="col">Horário</th>
+                                <th scope="col">Especialidade</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><strong>Mariana Costa</strong></td>
+                                <td>09:00</td>
+                                <td>Clínica geral</td>
+                                <td><span class="status-badge status-confirmed">Confirmada</span></td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Pedro Almeida</strong></td>
+                                <td>10:30</td>
+                                <td>Cardiologia</td>
+                                <td><span class="status-badge status-pending">Pendente</span></td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Juliana Martins</strong></td>
+                                <td>13:00</td>
+                                <td>Dermatologia</td>
+                                <td><span class="status-badge status-confirmed">Confirmada</span></td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Lucas Ferreira</strong></td>
+                                <td>14:30</td>
+                                <td>Clínica geral</td>
+                                <td><span class="status-badge status-pending">Pendente</span></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <p class="demo-notice">
+                    Nomes, horários e consultas fictícios.
+                </p>
+
+            </article>
+
+
+            <!-- ATALHOS -->
+            <aside class="dashboard-panel quick-access-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-eyebrow">ATALHOS</span>
+                        <h2>Acesso rápido</h2>
+                    </div>
+                </div>
+
+                <div class="quick-access-list">
+
+                    <a href="paciente.html" class="quick-access-item">
+                        <span class="quick-access-icon" aria-hidden="true">♙</span>
+                        <span class="quick-access-text">
+                            <strong>Pacientes</strong>
+                            <small>Consultar e organizar cadastros</small>
+                        </span>
+                        <span class="quick-access-arrow" aria-hidden="true">→</span>
+                    </a>
+
+                    <a href="medico.html" class="quick-access-item">
+                        <span class="quick-access-icon" aria-hidden="true">⚕</span>
+                        <span class="quick-access-text">
+                            <strong>Médicos</strong>
+                            <small>Visualizar profissionais cadastrados</small>
+                        </span>
+                        <span class="quick-access-arrow" aria-hidden="true">→</span>
+                    </a>
+
+                    <a href="consultas.html" class="quick-access-item">
+                        <span class="quick-access-icon" aria-hidden="true">▦</span>
+                        <span class="quick-access-text">
+                            <strong>Consultas</strong>
+                            <small>Organizar a agenda da clínica</small>
+                        </span>
+                        <span class="quick-access-arrow" aria-hidden="true">→</span>
+                    </a>
+
+                    <a href="sobre.html" class="quick-access-item">
+                        <span class="quick-access-icon" aria-hidden="true">♡</span>
+                        <span class="quick-access-text">
+                            <strong>Sobre a clínica</strong>
+                            <small>Conhecer a Clínica Vida Plena</small>
+                        </span>
+                        <span class="quick-access-arrow" aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- ORGANIZAÇÃO DA ROTINA -->
+        <section class="operations-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-eyebrow">ROTINA ADMINISTRATIVA</span>
+                    <h2>Organização do dia</h2>
+                    <p>Informações para ajudar a equipe a manter a rotina em ordem.</p>
+                </div>
+            </div>
+
+            <div class="operations-grid">
+
+                <!-- OCUPAÇÃO DA AGENDA -->
+                <article class="dashboard-panel occupancy-card">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Ocupação da agenda</h2>
+                            <p class="panel-subtitle">Exemplo de utilização dos horários.</p>
+                        </div>
+                    </div>
+
+                    <div class="occupancy-summary">
+                        <span>Ocupação ilustrativa</span>
+                        <strong>75%</strong>
+                    </div>
+
+                    <div
+                        class="occupancy-progress"
+                        role="progressbar"
+                        aria-label="Ocupação demonstrativa da agenda"
+                        aria-valuenow="75"
+                        aria-valuemin="0"
+                        aria-valuemax="100">
+                        <div class="occupancy-progress-fill"></div>
+                    </div>
+
+                    <p class="panel-description">
+                        O indicador é demonstrativo. A ocupação real deverá
+                        ser calculada a partir dos dados da agenda.
+                    </p>
+
+                    <a href="consultas.html" class="button button-secondary">
+                        Consultar agenda
+                    </a>
+
+                </article>
+
+
+                <!-- TAREFAS -->
+                <article class="dashboard-panel tasks-card" id="tarefas">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Atividades importantes</h2>
+                            <p class="panel-subtitle">Itens sugeridos para revisão.</p>
+                        </div>
+                        <span class="task-counter">03 itens</span>
+                    </div>
+
+                    <ul class="task-list">
+
+                        <li class="task-item">
+                            <span class="task-indicator task-high"></span>
+                            <div class="task-content">
+                                <strong>Revisar agendamentos</strong>
+                                <span>Verificar consultas pendentes.</span>
+                            </div>
+                            <span class="priority-badge priority-high">Alta</span>
+                        </li>
+
+                        <li class="task-item">
+                            <span class="task-indicator task-medium"></span>
+                            <div class="task-content">
+                                <strong>Conferir cadastros</strong>
+                                <span>Verificar informações administrativas.</span>
+                            </div>
+                            <span class="priority-badge priority-medium">Média</span>
+                        </li>
+
+                        <li class="task-item">
+                            <span class="task-indicator task-low"></span>
+                            <div class="task-content">
+                                <strong>Atualizar informações</strong>
+                                <span>Revisar os dados institucionais.</span>
+                            </div>
+                            <span class="priority-badge priority-low">Baixa</span>
+                        </li>
+
+                    </ul>
+
+                    <p class="panel-description">
+                        Lista demonstrativa. As tarefas não são salvas automaticamente.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÁREAS DO SISTEMA -->
+        <section class="routine-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-eyebrow">GESTÃO INTEGRADA</span>
+                    <h2>Explore o sistema</h2>
+                    <p>Acesse as principais áreas da Clínica Vida Plena.</p>
+                </div>
+            </div>
+
+            <div class="routine-grid">
+
+                <a href="paciente.html" class="routine-card">
+                    <div class="routine-card-icon" aria-hidden="true">♙</div>
+                    <h3>Gestão de pacientes</h3>
+                    <p>
+                        Organize os cadastros e as informações administrativas
+                        dos pacientes.
+                    </p>
+                    <span class="routine-card-link">Acessar pacientes →</span>
+                </a>
+
+                <a href="medico.html" class="routine-card">
+                    <div class="routine-card-icon" aria-hidden="true">⚕</div>
+                    <h3>Equipe médica</h3>
+                    <p>
+                        Consulte e organize os dados dos profissionais
+                        da clínica.
+                    </p>
+                    <span class="routine-card-link">Acessar médicos →</span>
+                </a>
+
+                <a href="consultas.html" class="routine-card">
+                    <div class="routine-card-icon" aria-hidden="true">▦</div>
+                    <h3>Agenda de consultas</h3>
+                    <p>
+                        Visualize horários e organize os compromissos
+                        da clínica.
+                    </p>
+                    <span class="routine-card-link">Acessar consultas →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOAS PRÁTICAS DE SEGURANÇA -->
+        <section class="security-section">
+
+            <div class="security-icon" aria-hidden="true">✓</div>
+
+            <div class="security-content">
+                <span class="section-eyebrow">PRIVACIDADE E RESPONSABILIDADE</span>
+
+                <h2>Proteção das informações</h2>
+
+                <p>
+                    Os dados de saúde são informações sensíveis. O acesso deve
+                    ser restrito às pessoas autorizadas, respeitando as
+                    políticas da clínica e a legislação aplicável, incluindo a LGPD.
+                </p>
+
+                <ul class="security-list">
+                    <li>Utilize credenciais individuais.</li>
+                    <li>Não compartilhe senhas de acesso.</li>
+                    <li>Evite expor informações de pacientes.</li>
+                    <li>Encerre sua sessão ao terminar o trabalho.</li>
+                </ul>
+
+                <p class="security-note">
+                    Estas são orientações informativas. A segurança efetiva depende
+                    também da autenticação, das permissões e da proteção
+                    implementadas no Back-End.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES DA CLÍNICA -->
+        <section class="clinic-information-section">
+
+            <div class="clinic-information-content">
+                <span class="section-eyebrow">NOSSA INSTITUIÇÃO</span>
+                <h2>Clínica Vida Plena</h2>
+
+                <p>
+                    Nosso objetivo é oferecer um ambiente organizado,
+                    acolhedor e comprometido com a qualidade do atendimento.
+                    O ClinicManager foi pensado para facilitar a rotina
+                    administrativa e apoiar a organização dos serviços.
+                </p>
+
+                <a href="sobre.html" class="button button-primary">
+                    Conheça a clínica
+                </a>
+            </div>
+
+            <div class="clinic-information-symbol" aria-hidden="true">✚</div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="dashboard-footer">
+
+        <div class="footer-content">
+
+            <a href="index.html" class="brand footer-brand">
+                <span class="brand-icon">✚</span>
+                <span class="brand-text">Clinic<span>Manager</span></span>
+            </a>
+
+            <p>
+                Sistema de gestão administrativa da Clínica Vida Plena.
+            </p>
+
+            <span class="footer-copyright">
+                © 2026 ClinicManager. Projeto demonstrativo.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MAPA: ÚLTIMA SEÇÃO DA PÁGINA -->
+    <section class="location-section" aria-labelledby="location-title">
+
+        <div class="location-container">
+
+            <div class="location-heading">
+                <span class="section-eyebrow">COMO NOS ENCONTRAR</span>
+
+                <h2 id="location-title">Localização da clínica</h2>
+
+                <p>
+                    Estamos aqui para receber você com cuidado e acolhimento.
+                    Consulte o mapa para localizar nosso endereço.
+                </p>
+            </div>
+
+            <div class="location-card">
+
+                <div class="location-details">
+
+                    <div class="location-pin" aria-hidden="true">⌖</div>
+
+                    <div class="location-address">
+                        <h3>Clínica Vida Plena</h3>
+                        <p>Rua Constantino Fusco, 150</p>
+                        <span>Confirme a cidade e o estado antes de publicar.</span>
+                    </div>
+
+                    <a
+                        class="button button-primary location-button"
+                        href="https://www.google.com/maps/search/?api=1&query=Rua+Constantino+Fusco%2C+150"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Abrir rota no Google Maps ↗
+                    </a>
+
+                </div>
+
+                <div class="location-map">
+                    <iframe
+                        title="Mapa da localização da Clínica Vida Plena"
+                        src="https://maps.google.com/maps?q=Rua%20Constantino%20Fusco%2C%20150&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+
+            <p class="location-disclaimer">
+                O mapa pesquisa o endereço informado. Confirme se o marcador
+                corresponde ao local correto da clínica.
+            </p>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

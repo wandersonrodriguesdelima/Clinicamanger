@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Horários da Clínica | ClinicManager</title>
+
+    <link rel="stylesheet" href="css/confhorario.css">
+    
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="dashboard-header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand">
+                <span class="brand-icon">✚</span>
+                <span>Clinic<span class="brand-highlight">Manager</span></span>
+            </a>
+
+            <nav class="main-navigation">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="paciente.html" class="nav-link">Pacientes</a>
+                <a href="medico.html" class="nav-link">Médicos</a>
+                <a href="consultas.html" class="nav-link">Consultas</a>
+                <a href="confhorario.html" class="nav-link active">Horários</a>
+                <a href="sobre.html" class="nav-link">Sobre a Clínica</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="schedule-container">
+
+        <!-- Título da página -->
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">ADMINISTRAÇÃO</span>
+                <h1>Horários da Clínica</h1>
+                <p>Configure o funcionamento e a disponibilidade dos atendimentos.</p>
+            </div>
+
+            <div class="heading-icon">◷</div>
+        </section>
+
+        <!-- Resumo -->
+        <section class="schedule-summary">
+
+            <article class="summary-card">
+                <div class="summary-icon">◷</div>
+                <div>
+                    <p>Funcionamento padrão</p>
+                    <h2>08:00 – 18:00</h2>
+                    <span>Segunda a sexta</span>
+                </div>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-icon">▦</div>
+                <div>
+                    <p>Duração da consulta</p>
+                    <h2>30 minutos</h2>
+                    <span>Tempo padrão por atendimento</span>
+                </div>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-icon">✓</div>
+                <div>
+                    <p>Dias de funcionamento</p>
+                    <h2>6 dias</h2>
+                    <span>Segunda a sábado</span>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Horários semanais -->
+        <section class="schedule-panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Funcionamento semanal</h2>
+                    <p>Defina os horários de abertura e fechamento de cada dia.</p>
+                </div>
+                <span class="section-tag">HORÁRIO GERAL</span>
+            </div>
+
+            <form action="#" method="get">
+
+                <div class="day-row">
+                    <div class="day-name">
+                        <strong>Segunda-feira</strong>
+                        <span>Início da semana</span>
+                    </div>
+                    <label class="time-field">
+                        <span>Abertura</span>
+                        <input type="time" name="segunda_abertura"
+                               value="08:00">
+                    </label>
+                    <label class="time-field">
+                        <span>Fechamento</span>
+                        <input type="time" name="segunda_fechamento"
+                               value="18:00">
+                    </label>
+                    <span class="day-status open">Aberto</span>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">
+                        <strong>Terça-feira</strong>
+                        <span>Funcionamento normal</span>
+                    </div>
+                    <label class="time-field">
+                        <span>Abertura</span>
+                        <input type="time" name="terca_abertura"
+                               value="08:00">
+                    </label>
+                    <label class="time-field">
+                        <span>Fechamento</span>
+                        <input type="time" name="terca_fechamento"
+                               value="18:00">
+                    </label>
+                    <span class="day-status open">Aberto</span>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">
+                        <strong>Quarta-feira</strong>
+                        <span>Funcionamento normal</span>
+                    </div>
+                    <label class="time-field">
+                        <span>Abertura</span>
+                        <input type="time" name="quarta_abertura"
+                               value="08:00">
+                    </label>
+                    <label class="time-field">
+                        <span>Fechamento</span>
+                        <input type="time" name="quarta_fechamento"
+                               value="18:00">
+                    </label>
+                    <span class="day-status open">Aberto</span>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">
+                        <strong>Quinta-feira</strong>
+                        <span>Funcionamento normal</span>
+                    </div>
+                    <label class="time-field">
+                        <span>Abertura</span>
+                        <input type="time" name="quinta_abertura"
+                               value="08:00">
+                    </label>
+                    <label class="time-field">
+                        <span>Fechamento</span>
+                        <input type="time" name="quinta_fechamento"
+                               value="18:00">
+                    </label>
+                    <span class="day-status open">Aberto</span>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">
+                        <strong>Sexta-feira</strong>
+                        <span>Funcionamento normal</span>
+                    </div>
+                    <label class="time-field">
+                        <span>Abertura</span>
+                        <input type="time" name="sexta_abertura"
+                               value="08:00">
+                    </label>
+                    <label class="time-field">
+                        <span>Fechamento</span>
+                        <input type="time" name="sexta_fechamento"
+                               value="18:00">
+                    </label>
+                    <span class="day-status open">Aberto</span>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">
+                        <strong>Sábado</strong>
+                        <span>Atendimento reduzido</span>
+                    </div>
+                    <label class="time-field">
+                        <span>Abertura</span>
+                        <input type="time" name="sabado_abertura"
+                               value="08:00">
+                    </label>
+                    <label class="time-field">
+                        <span>Fechamento</span>
+                        <input type="time" name="sabado_fechamento"
+                               value="12:00">
+                    </label>
+                    <span class="day-status open">Aberto</span>
+                </div>
+
+                <div class="day-row closed-day">
+                    <div class="day-name">
+                        <strong>Domingo</strong>
+                        <span>Sem atendimento</span>
+                    </div>
+                    <div class="closed-message">Clínica fechada</div>
+                    <span class="day-status closed">Fechado</span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="button-secondary">
+                        Restaurar valores
+                    </button>
+                    <button type="button" class="button-primary">
+                        Salvar configurações
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Preferências -->
+        <section class="preferences-grid">
+
+            <article class="preference-card">
+                <div class="preference-title">
+                    <div class="preference-icon">◷</div>
+                    <div>
+                        <h2>Intervalo de almoço</h2>
+                        <p>Configure a pausa geral da clínica.</p>
+                    </div>
+                </div>
+
+                <div class="preference-fields">
+                    <label>
+                        Início do intervalo
+                        <input type="time" value="12:00"
+                               name="almoco_inicio">
+                    </label>
+
+                    <label>
+                        Fim do intervalo
+                        <input type="time" value="13:00"
+                               name="almoco_fim">
+                    </label>
+                </div>
+            </article>
+
+            <article class="preference-card">
+                <div class="preference-title">
+                    <div class="preference-icon">▦</div>
+                    <div>
+                        <h2>Duração das consultas</h2>
+                        <p>Defina o tempo padrão de cada atendimento.</p>
+                    </div>
+                </div>
+
+                <label class="full-field">
+                    Tempo por consulta
+                    <select name="duracao_consulta">
+                        <option value="15">15 minutos</option>
+                        <option value="30" selected>30 minutos</option>
+                        <option value="45">45 minutos</option>
+                        <option value="60">60 minutos</option>
+                    </select>
+                </label>
+            </article>
+
+        </section>
+
+        <!-- Informação -->
+        <aside class="information-note">
+            <span class="note-icon">ⓘ</span>
+            <div>
+                <strong>Importante</strong>
+                <p>
+                    Os horários apresentados são exemplos. Nesta versão,
+                    as alterações ainda não são salvas nem aplicadas
+                    automaticamente à agenda dos médicos.
+                </p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="schedule-footer">
+        <p>© 2026 ClinicManager — Sistema de Gestão Clínica</p>
+    </footer>
+
+</body>
+</html>

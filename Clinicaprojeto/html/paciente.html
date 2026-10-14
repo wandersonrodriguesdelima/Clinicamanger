@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pacientes | ClinicManager</title>
+
+    <link rel="stylesheet" href="css/paciente.css">
+    
+</head>
+
+<body>
+
+    <!-- CABEÇALHO PADRONIZADO -->
+    <header class="cm-header">
+        <div class="cm-header-container">
+
+            <a href="index.html" class="cm-logo">
+                <span class="cm-logo-icon">✚</span>
+                <span>Clinic<span>Manager</span></span>
+            </a>
+
+            <nav class="cm-nav">
+                <a href="index.html">Dashboard</a>
+                <a href="pacientes.html" class="active">Pacientes</a>
+                <a href="medico.html">Médicos</a>
+                <a href="consultas.html">Consultas</a>
+                <a href="sobre.html">Sobre</a>
+                 <a href="confhorario.html" >Horários</a>
+            </nav>
+
+            <div class="cm-user">
+                <div class="cm-user-avatar">AD</div>
+
+                <div class="cm-user-info">
+                    <strong>Administrador</strong>
+                    <span>Gestão da clínica</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="pacientes-main">
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="pacientes-hero">
+
+            <div class="pacientes-hero-content">
+
+                <span class="section-eyebrow">
+                    GESTÃO DE PACIENTES
+                </span>
+
+                <h1>Cuidado começa com organização.</h1>
+
+                <p>
+                    Gerencie os cadastros, consulte informações e mantenha
+                    os dados dos pacientes organizados em um só lugar,
+                    com praticidade e atenção a cada detalhe.
+                </p>
+
+                <div class="pacientes-hero-actions">
+                    <a href="#cadastro-paciente" class="btn-primary">
+                        + Novo paciente
+                    </a>
+
+                    <a href="#lista-pacientes" class="btn-secondary">
+                        Ver pacientes
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pacientes-hero-decoration">
+                <div class="patients-circle">
+                    <span>♡</span>
+                </div>
+
+                <div class="patients-floating-card">
+                    <span class="floating-check">✓</span>
+
+                    <div>
+                        <strong>Cuidado humanizado</strong>
+                        <small>Organização e acolhimento</small>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- INDICADORES -->
+        <section class="pacientes-stats">
+
+            <article class="patient-stat-card">
+                <div class="patient-stat-top">
+                    <span>Total de pacientes</span>
+                    <span class="patient-stat-icon">♙</span>
+                </div>
+
+                <strong>128</strong>
+
+                <small>Cadastros demonstrativos</small>
+            </article>
+
+            <article class="patient-stat-card">
+                <div class="patient-stat-top">
+                    <span>Novos pacientes</span>
+                    <span class="patient-stat-icon">＋</span>
+                </div>
+
+                <strong>08</strong>
+
+                <small>Exemplo do mês</small>
+            </article>
+
+            <article class="patient-stat-card">
+                <div class="patient-stat-top">
+                    <span>Consultas hoje</span>
+                    <span class="patient-stat-icon">▣</span>
+                </div>
+
+                <strong>18</strong>
+
+                <small>Agenda demonstrativa</small>
+            </article>
+
+            <article class="patient-stat-card">
+                <div class="patient-stat-top">
+                    <span>Cadastros recentes</span>
+                    <span class="patient-stat-icon">◷</span>
+                </div>
+
+                <strong>05</strong>
+
+                <small>Exemplo de movimentação</small>
+            </article>
+
+        </section>
+
+
+        <!-- ÁREA PRINCIPAL -->
+        <section class="pacientes-content-grid">
+
+            <!-- FORMULÁRIO DE CADASTRO -->
+            <article class="patient-card patient-form-card"
+                     id="cadastro-paciente">
+
+                <div class="patient-card-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            NOVO CADASTRO
+                        </span>
+
+                        <h2>Cadastrar paciente</h2>
+
+                        <p>
+                            Preencha as informações básicas do paciente.
+                        </p>
+                    </div>
+
+                    <span class="patient-heading-icon">＋</span>
+
+                </div>
+
+
+                <form class="patient-form" action="#" method="post">
+
+                    <div class="patient-form-group">
+                        <label for="nome-paciente">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome-paciente"
+                            name="nome"
+                            placeholder="Digite o nome completo"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="patient-form-row">
+
+                        <div class="patient-form-group">
+                            <label for="nascimento">
+                                Data de nascimento
+                            </label>
+
+                            <input
+                                type="date"
+                                id="nascimento"
+                                name="data_nascimento"
+                                required
+                            >
+                        </div>
+
+                        <div class="patient-form-group">
+                            <label for="sexo">
+                                Sexo
+                            </label>
+
+                            <select id="sexo" name="sexo" required>
+                                <option value="">Selecione</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="nao_informado">
+                                    Prefiro não informar
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="patient-form-group">
+                        <label for="email-paciente">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email-paciente"
+                            name="email"
+                            placeholder="paciente@email.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="patient-form-row">
+
+                        <div class="patient-form-group">
+                            <label for="telefone-paciente">
+                                Telefone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone-paciente"
+                                name="telefone"
+                                placeholder="(11) 99999-9999"
+                                autocomplete="tel"
+                                required
+                            >
+                        </div>
+
+                        <div class="patient-form-group">
+                            <label for="documento-paciente">
+                                Documento de identificação
+                            </label>
+
+                            <input
+                                type="text"
+                                id="documento-paciente"
+                                name="documento"
+                                placeholder="CPF ou outro documento"
+                                autocomplete="off"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="patient-form-group">
+                        <label for="endereco-paciente">
+                            Endereço
+                        </label>
+
+                        <input
+                            type="text"
+                            id="endereco-paciente"
+                            name="endereco"
+                            placeholder="Rua, número e bairro"
+                            autocomplete="street-address"
+                        >
+                    </div>
+
+
+                    <div class="patient-form-group">
+                        <label for="observacoes-paciente">
+                            Observações administrativas
+                        </label>
+
+                        <textarea
+                            id="observacoes-paciente"
+                            name="observacoes"
+                            rows="3"
+                            placeholder="Informações administrativas relevantes..."
+                        ></textarea>
+                    </div>
+
+
+                    <div class="patient-form-actions">
+
+                        <button type="reset" class="btn-secondary">
+                            Limpar campos
+                        </button>
+
+                        <button type="submit" class="btn-primary">
+                            Cadastrar paciente
+                        </button>
+
+                    </div>
+
+                    <p class="patient-form-note">
+                        O envio e o armazenamento dos dados serão
+                        implementados na integração com o Back-End.
+                    </p>
+
+                </form>
+
+            </article>
+
+
+            <!-- PAINEL LATERAL -->
+            <aside class="patients-sidebar">
+
+                <!-- RESUMO -->
+                <article class="patient-card patient-summary-card">
+
+                    <div class="patient-card-heading">
+                        <div>
+                            <span class="section-eyebrow">
+                                VISÃO GERAL
+                            </span>
+
+                            <h2>Resumo dos pacientes</h2>
+                        </div>
+                    </div>
+
+                    <p class="patient-sidebar-description">
+                        Acompanhe as informações gerais e mantenha
+                        os cadastros organizados.
+                    </p>
+
+
+                    <div class="summary-highlight">
+                        <div class="summary-highlight-icon">♙</div>
+
+                        <div>
+                            <strong>128 pacientes</strong>
+                            <span>Total ilustrativo do sistema</span>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-row">
+                        <span>Cadastros ativos</span>
+                        <strong>120</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Cadastros recentes</span>
+                        <strong>05</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Novos neste mês</span>
+                        <strong>08</strong>
+                    </div>
+
+
+                    <a href="#lista-pacientes" class="patient-text-link">
+                        Consultar lista <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- ATALHOS -->
+                <article class="patient-card patient-shortcuts-card">
+
+                    <div class="patient-card-heading">
+                        <div>
+                            <span class="section-eyebrow">
+                                ACESSO RÁPIDO
+                            </span>
+
+                            <h2>Atalhos</h2>
+                        </div>
+                    </div>
+
+
+                    <a href="consultas.html" class="patient-shortcut">
+                        <span class="shortcut-icon">▣</span>
+
+                        <span class="shortcut-text">
+                            <strong>Consultas</strong>
+                            <small>Visualizar a agenda</small>
+                        </span>
+
+                        <span class="shortcut-arrow">→</span>
+                    </a>
+
+
+                    <a href="medico.html" class="patient-shortcut">
+                        <span class="shortcut-icon">✚</span>
+
+                        <span class="shortcut-text">
+                            <strong>Equipe médica</strong>
+                            <small>Ver profissionais</small>
+                        </span>
+
+                        <span class="shortcut-arrow">→</span>
+                    </a>
+
+
+                    <a href="index.html" class="patient-shortcut">
+                        <span class="shortcut-icon">⌂</span>
+
+                        <span class="shortcut-text">
+                            <strong>Dashboard</strong>
+                            <small>Voltar ao painel</small>
+                        </span>
+
+                        <span class="shortcut-arrow">→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- PRIVACIDADE -->
+                <article class="patient-card patient-privacy-card">
+
+                    <div class="privacy-symbol">◇</div>
+
+                    <div>
+                        <h3>Privacidade em primeiro lugar</h3>
+
+                        <p>
+                            Dados pessoais e informações de saúde exigem
+                            acesso controlado, armazenamento seguro e
+                            tratamento responsável.
+                        </p>
+                    </div>
+
+                </article>
+
+            </aside>
+
+        </section>
+
+
+        <!-- LISTA DE PACIENTES -->
+        <section class="patient-card patient-list-card"
+                 id="lista-pacientes">
+
+            <div class="patient-list-heading">
+
+                <div>
+                    <span class="section-eyebrow">
+                        BASE DE CADASTROS
+                    </span>
+
+                    <h2>Pacientes cadastrados</h2>
+
+                    <p>
+                        Consulte os registros de demonstração abaixo.
+                    </p>
+                </div>
+
+                <div class="patient-list-count">
+                    <strong>128</strong>
+                    <span>registros ilustrativos</span>
+                </div>
+
+            </div>
+
+
+            <!-- BUSCA VISUAL -->
+            <div class="patient-list-toolbar">
+
+                <label class="patient-search" for="busca-paciente">
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="busca-paciente"
+                        placeholder="Buscar paciente por nome ou e-mail..."
+                    >
+                </label>
+
+                <select
+                    class="patient-filter"
+                    aria-label="Filtrar pacientes por situação"
+                >
+                    <option value="">Todas as situações</option>
+                    <option value="ativo">Ativo</option>
+                    <option value="recente">Cadastro recente</option>
+                </select>
+
+            </div>
+
+
+            <div class="patient-table-wrapper">
+
+                <table class="patient-table">
+
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Contato</th>
+                            <th>Cadastro</th>
+                            <th>Última consulta</th>
+                            <th>Situação</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <div class="patient-person">
+                                    <div class="patient-avatar patient-avatar-one">
+                                        AC
+                                    </div>
+
+                                    <div>
+                                        <strong>Ana Clara Souza</strong>
+                                        <span>ID: PAC-001</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="patient-contact">
+                                    <strong>ana@email.com</strong>
+                                    <span>(11) 90000-0001</span>
+                                </div>
+                            </td>
+
+                            <td>05/10/2026</td>
+                            <td>10/10/2026</td>
+
+                            <td>
+                                <span class="patient-status status-active">
+                                    Ativo
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#cadastro-paciente"
+                                   class="patient-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="patient-person">
+                                    <div class="patient-avatar patient-avatar-two">
+                                        RM
+                                    </div>
+
+                                    <div>
+                                        <strong>Roberto Martins</strong>
+                                        <span>ID: PAC-002</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="patient-contact">
+                                    <strong>roberto@email.com</strong>
+                                    <span>(11) 90000-0002</span>
+                                </div>
+                            </td>
+
+                            <td>06/10/2026</td>
+                            <td>12/10/2026</td>
+
+                            <td>
+                                <span class="patient-status status-active">
+                                    Ativo
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#cadastro-paciente"
+                                   class="patient-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="patient-person">
+                                    <div class="patient-avatar patient-avatar-three">
+                                        JL
+                                    </div>
+
+                                    <div>
+                                        <strong>Juliana Lima</strong>
+                                        <span>ID: PAC-003</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="patient-contact">
+                                    <strong>juliana@email.com</strong>
+                                    <span>(11) 90000-0003</span>
+                                </div>
+                            </td>
+
+                            <td>08/10/2026</td>
+                            <td>12/10/2026</td>
+
+                            <td>
+                                <span class="patient-status status-recent">
+                                    Recente
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#cadastro-paciente"
+                                   class="patient-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="patient-person">
+                                    <div class="patient-avatar patient-avatar-four">
+                                        MS
+                                    </div>
+
+                                    <div>
+                                        <strong>Marcos Silva</strong>
+                                        <span>ID: PAC-004</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="patient-contact">
+                                    <strong>marcos@email.com</strong>
+                                    <span>(11) 90000-0004</span>
+                                </div>
+                            </td>
+
+                            <td>09/10/2026</td>
+                            <td>—</td>
+
+                            <td>
+                                <span class="patient-status status-active">
+                                    Ativo
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="#cadastro-paciente"
+                                   class="patient-table-link">
+                                    Visualizar
+                                </a>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="patient-table-footer">
+
+                <span>
+                    Exibindo 4 pacientes fictícios para demonstração.
+                </span>
+
+                <a href="#cadastro-paciente" class="patient-text-link">
+                    Novo cadastro <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="patients-footer">
+
+            <div class="patients-footer-brand">
+
+                <span class="patients-footer-logo">✚</span>
+
+                <div>
+                    <strong>ClinicManager</strong>
+                    <span>Clínica Vida Plena</span>
+                </div>
+
+            </div>
+
+            <p>
+                Organização, tecnologia e cuidado em um só lugar.
+            </p>
+
+            <span class="patients-copyright">
+                © 2026 ClinicManager
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>
+```

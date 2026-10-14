@@ -1,0 +1,1719 @@
+
+
+:root {
+    --med-brown: #6F4E37;
+    --med-brown-dark: #4E3528;
+    --med-brown-soft: #8B6B52;
+
+    --med-cream: #F7F3EE;
+    --med-cream-dark: #EDE3D8;
+
+    --med-white: #FFFFFF;
+    --med-text: #3E332C;
+    --med-muted: #8B8179;
+    --med-border: #EAE2D9;
+
+    --med-green: #52785D;
+    --med-green-bg: #E8F2E9;
+
+    --med-yellow: #A97932;
+    --med-yellow-bg: #FBF0DE;
+
+    --med-shadow: 0 8px 28px rgba(75, 53, 37, 0.06);
+    --med-shadow-hover: 0 16px 36px rgba(75, 53, 37, 0.12);
+
+    --med-radius: 18px;
+}
+
+
+/* =========================================
+   BASE
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    margin: 0;
+    background: var(--med-cream);
+    color: var(--med-text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(139, 107, 82, 0.45);
+    outline-offset: 3px;
+}
+
+::selection {
+    color: var(--med-white);
+    background: var(--med-brown);
+}
+
+
+/* =========================================
+   CABEÇALHO PADRONIZADO
+========================================= */
+
+.cm-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--med-border);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.cm-header-container {
+    width: min(1440px, 100%);
+    min-height: 86px;
+
+    margin: 0 auto;
+    padding: 16px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cm-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    color: var(--med-brown-dark);
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+
+    transition: transform 0.3s ease;
+}
+
+.cm-logo:hover {
+    transform: translateY(-2px);
+}
+
+.cm-logo > span:last-child > span {
+    color: var(--med-brown-soft);
+}
+
+.cm-logo-icon {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+    background: var(--med-brown);
+    color: var(--med-white);
+
+    font-size: 23px;
+
+    box-shadow: 0 5px 12px rgba(111, 78, 55, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.cm-logo:hover .cm-logo-icon {
+    transform: rotate(-8deg);
+    background: var(--med-brown-dark);
+}
+
+.cm-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.cm-nav a {
+    position: relative;
+
+    padding: 10px 13px;
+    border-radius: 10px;
+
+    color: #75695F;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.cm-nav a:hover {
+    color: var(--med-brown);
+    background: var(--med-cream);
+    transform: translateY(-2px);
+}
+
+.cm-nav a.active {
+    color: var(--med-brown-dark);
+    background: var(--med-cream-dark);
+}
+
+.cm-nav a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 4px;
+
+    height: 2px;
+    border-radius: 5px;
+
+    background: var(--med-brown);
+}
+
+.cm-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.cm-user-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background: var(--med-cream-dark);
+    border: 1px solid #E2D3C4;
+
+    color: var(--med-brown-dark);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.cm-user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+.cm-user-info strong {
+    color: var(--med-text);
+    font-size: 12px;
+}
+
+.cm-user-info span {
+    color: var(--med-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+.medico-main {
+    width: min(1440px, 100%);
+    margin: 0 auto;
+    padding: 38px 5% 28px;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 9px;
+
+    color: var(--med-brown-soft);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.medico-hero {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 285px;
+    padding: 42px 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(196, 158, 124, 0.24),
+            transparent 32%
+        ),
+        linear-gradient(
+            120deg,
+            var(--med-brown-dark),
+            var(--med-brown) 70%,
+            #806148
+        );
+
+    box-shadow: 0 16px 40px rgba(78, 53, 40, 0.12);
+}
+
+.medico-hero::before {
+    content: "";
+
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    top: -155px;
+    left: 48%;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.medico-hero::after {
+    content: "";
+
+    position: absolute;
+    width: 180px;
+    height: 180px;
+
+    right: 6%;
+    bottom: -125px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+}
+
+.medico-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.medico-hero .section-eyebrow {
+    color: #E2C6A9;
+}
+
+.medico-hero h1 {
+    margin: 0 0 12px;
+
+    color: var(--med-white);
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1.3px;
+}
+
+.medico-hero p {
+    max-width: 590px;
+    margin: 0;
+
+    color: #E8DCD2;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    margin-top: 24px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* =========================================
+   BOTÕES PADRONIZADOS
+========================================= */
+
+.btn-primary,
+.btn-secondary {
+    min-height: 45px;
+    padding: 12px 19px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    font-size: 12px;
+    font-weight: 750;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.btn-primary {
+    background: var(--med-brown);
+    color: var(--med-white);
+
+    box-shadow: 0 5px 13px rgba(78, 53, 40, 0.12);
+}
+
+.btn-primary:hover {
+    background: var(--med-brown-dark);
+    transform: translateY(-3px);
+
+    box-shadow: 0 9px 20px rgba(78, 53, 40, 0.2);
+}
+
+.btn-secondary {
+    border-color: var(--med-border);
+    background: var(--med-white);
+    color: var(--med-brown-dark);
+}
+
+.btn-secondary:hover {
+    border-color: #D2BDA9;
+    background: var(--med-cream);
+    transform: translateY(-3px);
+
+    box-shadow: 0 7px 16px rgba(78, 53, 40, 0.08);
+}
+
+.medico-hero .btn-primary {
+    background: var(--med-white);
+    color: var(--med-brown-dark);
+}
+
+.medico-hero .btn-primary:hover {
+    background: #F4EAE0;
+}
+
+.medico-hero .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--med-white);
+}
+
+.medico-hero .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.17);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================
+   ELEMENTO DECORATIVO DO HERO
+========================================= */
+
+.medico-hero-decoration {
+    position: relative;
+    z-index: 2;
+
+    width: 230px;
+    min-width: 200px;
+    height: 205px;
+
+    display: grid;
+    place-items: center;
+}
+
+.hero-decoration-circle {
+    width: 160px;
+    height: 160px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 0 0 17px rgba(255, 255, 255, 0.035),
+        0 0 0 35px rgba(255, 255, 255, 0.025);
+}
+
+.hero-decoration-circle span {
+    width: 100px;
+    height: 100px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.13);
+
+    color: var(--med-white);
+    font-size: 70px;
+    font-weight: 300;
+
+    transition: transform 0.4s ease;
+}
+
+.medico-hero:hover .hero-decoration-circle span {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+.hero-floating-card {
+    position: absolute;
+    right: -2px;
+    bottom: 1px;
+
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 13px;
+
+    background: var(--med-white);
+    box-shadow: var(--med-shadow);
+}
+
+.floating-icon {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+    background: var(--med-green-bg);
+    color: var(--med-green);
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.hero-floating-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-floating-card strong {
+    color: var(--med-text);
+    font-size: 11px;
+}
+
+.hero-floating-card small {
+    color: var(--med-muted);
+    font-size: 10px;
+}
+
+
+/* =========================================
+   INDICADORES
+========================================= */
+
+.medico-stats {
+    margin: 25px 0 30px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.stat-card {
+    min-width: 0;
+    padding: 22px;
+
+    border: 1px solid var(--med-border);
+    border-radius: var(--med-radius);
+
+    background: var(--med-white);
+    box-shadow: var(--med-shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--med-shadow-hover);
+    border-color: #D7C4B2;
+}
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.stat-label {
+    color: var(--med-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-icon {
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+    background: var(--med-cream);
+    color: var(--med-brown);
+
+    font-size: 20px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.08) rotate(-4deg);
+    background: var(--med-cream-dark);
+}
+
+.stat-number {
+    display: block;
+    margin: 13px 0 2px;
+
+    color: var(--med-brown-dark);
+    font-size: 31px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.stat-description {
+    color: var(--med-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   GRID PRINCIPAL
+========================================= */
+
+.medico-content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(270px, 0.85fr);
+    align-items: start;
+    gap: 23px;
+}
+
+.content-card {
+    min-width: 0;
+
+    border: 1px solid var(--med-border);
+    border-radius: var(--med-radius);
+
+    background: var(--med-white);
+    box-shadow: var(--med-shadow);
+}
+
+.cadastro-card {
+    padding: 28px;
+}
+
+.card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 26px;
+}
+
+.card-heading h2,
+.list-heading h2 {
+    margin: 0;
+
+    color: var(--med-brown-dark);
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+}
+
+.card-heading p,
+.list-heading p {
+    margin: 7px 0 0;
+
+    color: var(--med-muted);
+    font-size: 12px;
+}
+
+.heading-icon {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 13px;
+    background: var(--med-cream);
+    color: var(--med-brown);
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+.medico-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.form-group {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--med-text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-height: 47px;
+    padding: 12px 13px;
+
+    border: 1px solid #E4DCD4;
+    border-radius: 10px;
+
+    background: #FFFEFD;
+    color: var(--med-text);
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.form-group input::placeholder {
+    color: #B0A59B;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #CDB8A4;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--med-brown-soft);
+    background: var(--med-white);
+    box-shadow: 0 0 0 4px rgba(139, 107, 82, 0.11);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 15px;
+}
+
+.form-actions {
+    margin-top: 5px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+.form-note {
+    margin: 0;
+
+    color: var(--med-muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BARRA LATERAL
+========================================= */
+
+.medico-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-card {
+    padding: 25px;
+}
+
+.team-card .card-heading {
+    margin-bottom: 13px;
+}
+
+.team-card .card-heading h2 {
+    font-size: 20px;
+}
+
+.sidebar-description {
+    margin: 0 0 22px;
+
+    color: var(--med-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.team-visual {
+    display: flex;
+    align-items: center;
+    padding: 2px 0 8px;
+}
+
+.team-avatar {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    margin-right: -8px;
+
+    border: 3px solid var(--med-white);
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.team-avatar:hover {
+    position: relative;
+    z-index: 3;
+    transform: translateY(-5px) scale(1.06);
+    box-shadow: 0 5px 12px rgba(78, 53, 40, 0.12);
+}
+
+.avatar-one {
+    background: #E8D6C4;
+    color: #6F4E37;
+}
+
+.avatar-two {
+    background: #DCE8DF;
+    color: #45694F;
+}
+
+.avatar-three {
+    background: #E9DFEF;
+    color: #765C8A;
+}
+
+.avatar-four {
+    background: #F3E2C6;
+    color: #956B30;
+}
+
+.avatar-more {
+    background: var(--med-cream);
+    color: var(--med-brown);
+}
+
+.team-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    margin-top: 13px;
+}
+
+.team-summary strong {
+    color: var(--med-brown-dark);
+    font-size: 13px;
+}
+
+.team-summary span {
+    color: var(--med-muted);
+    font-size: 11px;
+}
+
+.team-divider {
+    height: 1px;
+    margin: 22px 0;
+
+    background: var(--med-border);
+}
+
+.specialty-summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.specialty-icon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 11px;
+    background: var(--med-cream);
+    color: var(--med-brown);
+
+    font-size: 20px;
+}
+
+.specialty-summary strong {
+    display: block;
+
+    color: var(--med-text);
+    font-size: 12px;
+}
+
+.specialty-summary p {
+    margin: 4px 0 0;
+
+    color: var(--med-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CARD DE ORIENTAÇÃO
+========================================= */
+
+.attention-card {
+    padding: 23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FBF7F2
+        );
+}
+
+.attention-icon {
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #E7D7C5;
+    border-radius: 12px;
+
+    background: var(--med-cream);
+    color: var(--med-brown);
+
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.attention-card h3 {
+    margin: 15px 0 8px;
+
+    color: var(--med-brown-dark);
+    font-size: 16px;
+}
+
+.attention-card p {
+    margin: 0;
+
+    color: var(--med-muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 16px;
+
+    color: var(--med-brown);
+    font-size: 12px;
+    font-weight: 750;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+.text-link:hover {
+    gap: 12px;
+    color: var(--med-brown-dark);
+}
+
+.text-link span {
+    font-size: 16px;
+}
+
+
+/* =========================================
+   PRIVACIDADE
+========================================= */
+
+.privacy-card {
+    padding: 20px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    background: #FDFBF8;
+}
+
+.privacy-icon {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: var(--med-cream-dark);
+    color: var(--med-brown);
+
+    font-size: 21px;
+}
+
+.privacy-card h3 {
+    margin: 0 0 5px;
+
+    color: var(--med-brown-dark);
+    font-size: 12px;
+}
+
+.privacy-card p {
+    margin: 0;
+
+    color: var(--med-muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   LISTA DE MÉDICOS
+========================================= */
+
+.doctors-list-card {
+    margin-top: 27px;
+    padding: 28px;
+
+    scroll-margin-top: 110px;
+}
+
+.list-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.list-counter {
+    padding: 11px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    border: 1px solid var(--med-border);
+    border-radius: 12px;
+
+    background: var(--med-cream);
+    white-space: nowrap;
+}
+
+.list-counter strong {
+    color: var(--med-brown-dark);
+    font-size: 20px;
+}
+
+.list-counter span {
+    color: var(--med-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   BUSCA E FILTRO
+========================================= */
+
+.list-toolbar {
+    margin-bottom: 21px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.search-box {
+    min-width: 0;
+    flex: 1;
+
+    min-height: 46px;
+    padding: 0 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid var(--med-border);
+    border-radius: 10px;
+
+    background: #FFFEFD;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.search-box:focus-within {
+    border-color: var(--med-brown-soft);
+    box-shadow: 0 0 0 4px rgba(139, 107, 82, 0.1);
+}
+
+.search-box > span {
+    color: var(--med-brown-soft);
+    font-size: 25px;
+    line-height: 1;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: var(--med-text);
+
+    font-size: 12px;
+}
+
+.search-box input::placeholder {
+    color: #A99D93;
+}
+
+.filter-select {
+    width: 215px;
+    max-width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+
+    border: 1px solid var(--med-border);
+    border-radius: 10px;
+
+    background: var(--med-white);
+    color: var(--med-text);
+
+    font-size: 11px;
+    cursor: pointer;
+
+    transition: border-color 0.25s ease;
+}
+
+.filter-select:hover {
+    border-color: #CDB8A4;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--med-brown-soft);
+}
+
+
+/* =========================================
+   TABELA
+========================================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid #F0EAE4;
+    border-radius: 13px;
+}
+
+.doctors-table {
+    width: 100%;
+    min-width: 760px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+}
+
+.doctors-table thead {
+    background: #FAF7F3;
+}
+
+.doctors-table th {
+    padding: 15px 14px;
+
+    border-bottom: 1px solid var(--med-border);
+
+    color: var(--med-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.doctors-table td {
+    padding: 16px 14px;
+
+    border-bottom: 1px solid #F1ECE7;
+
+    color: #766A61;
+    font-size: 11px;
+    white-space: nowrap;
+
+    transition: background 0.2s ease;
+}
+
+.doctors-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.doctors-table tbody tr:hover td {
+    background: #FCF9F5;
+}
+
+.doctor-person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.doctor-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.doctor-person > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.doctor-person strong {
+    color: var(--med-brown-dark);
+    font-size: 11px;
+}
+
+.doctor-person span {
+    color: var(--med-muted);
+    font-size: 10px;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 750;
+}
+
+.status-active {
+    background: var(--med-green-bg);
+    color: var(--med-green);
+}
+
+.status-away {
+    background: var(--med-yellow-bg);
+    color: var(--med-yellow);
+}
+
+.table-link {
+    color: var(--med-brown);
+    font-size: 11px;
+    font-weight: 750;
+
+    transition: color 0.2s ease;
+}
+
+.table-link:hover {
+    color: var(--med-brown-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+/* =========================================
+   RODAPÉ DA TABELA
+========================================= */
+
+.table-footer {
+    margin-top: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.table-footer > span {
+    color: var(--med-muted);
+    font-size: 11px;
+}
+
+.table-footer .text-link {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   RODAPÉ DA PÁGINA
+========================================= */
+
+.medico-footer {
+    margin-top: 35px;
+    padding: 24px 0 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    border-top: 1px solid #E5DBD1;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.footer-logo {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+    background: var(--med-brown);
+
+    color: var(--med-white);
+    font-size: 22px;
+}
+
+.footer-brand > div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.footer-brand strong {
+    color: var(--med-brown-dark);
+    font-size: 12px;
+}
+
+.footer-brand div span {
+    color: var(--med-muted);
+    font-size: 10px;
+}
+
+.medico-footer > p {
+    margin: 0;
+
+    color: var(--med-muted);
+    font-size: 11px;
+}
+
+.footer-copyright {
+    color: var(--med-muted);
+    font-size: 10px;
+}
+
+
+/* =========================================
+   ANIMAÇÕES SUAVES
+========================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+    .medico-hero-content,
+    .stat-card,
+    .content-card {
+        animation: med-fade-in 0.55s ease both;
+    }
+
+    .stat-card:nth-child(2) {
+        animation-delay: 0.06s;
+    }
+
+    .stat-card:nth-child(3) {
+        animation-delay: 0.12s;
+    }
+
+    .stat-card:nth-child(4) {
+        animation-delay: 0.18s;
+    }
+
+    @keyframes med-fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(9px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — TABLETS
+========================================= */
+
+@media (max-width: 1150px) {
+    .cm-header-container {
+        flex-wrap: wrap;
+        gap: 15px 20px;
+    }
+
+    .cm-nav {
+        order: 3;
+        width: 100%;
+
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .cm-user {
+        margin-left: auto;
+    }
+
+    .medico-content-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.8fr);
+    }
+
+    .medico-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .medico-hero {
+        padding: 36px;
+    }
+
+    .medico-hero-decoration {
+        transform: scale(0.85);
+        transform-origin: center right;
+        margin-left: -20px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — TABLETS PEQUENOS
+========================================= */
+
+@media (max-width: 850px) {
+    .medico-main {
+        padding-top: 25px;
+    }
+
+    .medico-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .medico-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+    }
+
+    .team-card {
+        grid-row: span 2;
+    }
+
+    .medico-hero-decoration {
+        display: none;
+    }
+
+    .medico-hero-content {
+        max-width: 100%;
+    }
+
+    .medico-hero {
+        min-height: auto;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+    .cm-header-container {
+        padding: 13px 5%;
+        gap: 12px;
+    }
+
+    .cm-logo {
+        font-size: 19px;
+    }
+
+    .cm-user-info {
+        display: none;
+    }
+
+    .cm-user-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    .cm-nav {
+        gap: 4px;
+    }
+
+    .cm-nav a {
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    .cm-nav a.active::after {
+        left: 9px;
+        right: 9px;
+        bottom: 2px;
+    }
+
+    .medico-main {
+        padding: 22px 5% 20px;
+    }
+
+    .medico-hero {
+        padding: 27px 22px;
+        border-radius: 19px;
+    }
+
+    .medico-hero h1 {
+        font-size: 30px;
+    }
+
+    .medico-hero p {
+        font-size: 12px;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-actions a {
+        width: 100%;
+    }
+
+    .medico-stats {
+        gap: 11px;
+        margin: 18px 0 22px;
+    }
+
+    .stat-card {
+        padding: 16px 13px;
+        border-radius: 14px;
+    }
+
+    .stat-label {
+        font-size: 10px;
+    }
+
+    .stat-icon {
+        width: 31px;
+        height: 31px;
+        font-size: 17px;
+    }
+
+    .stat-number {
+        margin-top: 11px;
+        font-size: 27px;
+    }
+
+    .stat-description {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .cadastro-card,
+    .doctors-list-card {
+        padding: 20px 16px;
+    }
+
+    .card-heading h2,
+    .list-heading h2 {
+        font-size: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+        flex: auto;
+    }
+
+    .medico-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        grid-row: auto;
+    }
+
+    .list-heading {
+        align-items: flex-start;
+    }
+
+    .list-counter {
+        padding: 9px 10px;
+        gap: 5px;
+    }
+
+    .list-counter strong {
+        font-size: 17px;
+    }
+
+    .list-counter span {
+        font-size: 9px;
+    }
+
+    .list-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .filter-select {
+        width: 100%;
+    }
+
+    .table-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .medico-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .medico-footer > p {
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
